@@ -1,19 +1,18 @@
-import React from 'react'
+import React from "react";
 import Footer from "@/Components/Footer";
 import NavBar from "@/Components/NavBar";
+import { usePage } from "@inertiajs/inertia-react";
 
 export default function Main({ children }) {
-  const appName = window.document.getElementsByTagName('title')[0]?.innerText || 'Laravel';
+  const { app } = usePage().props;
 
   return (
     <>
-      <NavBar appName={appName} />
-      <div className="bg-slate-200">
-        <div className="container py-3">
-          {children}
-        </div>
-      </div>
-      <Footer appName={appName} />
+      <header>
+        <NavBar appName={app.name} />
+      </header>
+      {children}
+      <Footer appName={app.name} />
     </>
   );
 }
