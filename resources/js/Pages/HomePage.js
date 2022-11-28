@@ -2,13 +2,16 @@ import React from "react";
 import { Head } from "@inertiajs/inertia-react";
 import Main from "@/Layouts/Main";
 
-export default function HomePage(props) {
-
+const HomePage = (props) => {
+  console.log(props);
   return (
-    <Main>
+    <>
       <Head title={props.title} />
-      <div className="h-screen">
-      </div>
-    </Main>
+      <div className="h-screen"></div>;
+    </>
   );
-}
+};
+
+HomePage.layout = (page) => <Main children={page} />;
+
+export default HomePage;

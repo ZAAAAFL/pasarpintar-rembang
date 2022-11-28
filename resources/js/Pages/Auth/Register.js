@@ -5,6 +5,7 @@ import Input from '@/Components/Input';
 import Label from '@/Components/Label';
 import ValidationErrors from '@/Components/ValidationErrors';
 import { Head, Link, useForm } from '@inertiajs/inertia-react';
+import Main from '@/Layouts/Main';
 
 export default function Register() {
     const { data, setData, post, processing, errors, reset } = useForm({
@@ -31,6 +32,7 @@ export default function Register() {
     };
 
     return (
+      <Main>
         <Guest>
             <Head title="Register" />
 
@@ -95,7 +97,7 @@ export default function Register() {
 
                 <div className="flex items-center justify-end mt-4">
                     <Link href={route('login')} className="underline text-sm text-gray-600 hover:text-gray-900">
-                        Already registered?
+                        Sudah Registrasi?
                     </Link>
 
                     <Button className="ml-4" processing={processing}>
@@ -104,5 +106,6 @@ export default function Register() {
                 </div>
             </form>
         </Guest>
+      </Main>
     );
 }
