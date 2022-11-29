@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ProdukController;
+
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
@@ -18,8 +20,10 @@ use Inertia\Inertia;
 Route::get('/', [HomeController::class, 'index'])->name('index');
 Route::get('/produk', [HomeController::class, 'produk'])->name('produk');
 
+Route::get('/list-produk', [ProdukController::class, 'index']);
+
 Route::get('/user/profile', function () {
-    return Inertia::render('Dashboard');
+  return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
