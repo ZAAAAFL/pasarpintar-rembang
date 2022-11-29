@@ -1,70 +1,80 @@
+import { Menu, Transition } from "@headlessui/react";
 import { Link } from "@inertiajs/inertia-react";
-import React from "react";
+import { Fragment } from "react";
 
 const TopNavBar = ({ user }) => {
   return (
     <nav className="px-3.5 pt-2 pb-0 bg-white shadow-[0_10px_15px_-3px_rgba(0,0,0,0.1)]">
       <div className="container flex justify-center items-center text-sm">
-        {user ? (
-          <>
-            <button
+        {user !== null ? (
+          <Menu as="div" className="relative inline-block">
+            <Menu.Button
               type="button"
-              className="bg-transparent rounded-full text-sm focus:outline-none focus:ring-2 focus:ring-slate-300 mr-1 md:mr-0"
+              className="inline-flex bg-transparent rounded-full text-sm focus:outline-none focus:ring-2 focus:ring-slate-300 mr-1 md:mr-0"
             >
-              <div
-                id="user-menu-dropdown"
-                aria-expanded="false"
-                data-dropdown-toggle="user-dropdown"
-                data-dropdown-placement="bottom"
-                className="inline-flex overflow-hidden relative justify-center items-center w-10 h-10 bg-slate-100 rounded-full"
-              >
-                <span className="font-medium text-slate-700 truncate">
-                  {user.name
-                    .split(" ")
-                    .map((n) => n[0])
-                    .join("")}
-                </span>
-              </div>
-            </button>
-            <div
-              id="user-dropdown"
-              className="z-50 hidden text-base list-none bg-white divide-y divide-slate-300 rounded shadow"
+              <span className="font-medium text-slate-700 truncate">
+                {user.name
+                  .split(" ")
+                  .map((n) => n[0])
+                  .join("")}
+              </span>
+            </Menu.Button>
+            <Transition
+              as={Fragment}
+              enter="transition ease-out duration-100"
+              enterFrom="transform opacity-0 scale-95"
+              enterTo="transform opacity-100 scale-100"
+              leave="transition ease-in duration-75"
+              leaveFrom="transform opacity-100 scale-100"
+              leaveTo="transform opacity-0 scale-95"
             >
-              <div className="px-4 py-3">
-                <span className="block text-sm text-slate-900 truncate">
-                  {user.name}
-                </span>
-                <span className="block text-sm font-medium text-slate-600 truncate">
-                  {user.email}
-                </span>
-              </div>
-              <ul className="py-1" aria-labelledby="user-menu-button">
-                <li>
-                  <Link
-                    href="/user/profile"
-                    className="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-100"
-                  >
-                    Profil
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href={route("logout")}
-                    method="post"
-                    className="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-100"
-                  >
-                    Logout
-                  </Link>
-                </li>
-              </ul>
-            </div>
-          </>
+              <Menu.Items className="absolute right-0 mt-2 origin-top-right z-50 text-base list-none bg-white divide-y divide-slate-300 rounded shadow">
+                <div className="px-4 py-3">
+                  <Menu.Item>
+                    <span className="block text-sm text-slate-900 truncate">
+                      {user.name}
+                    </span>
+                  </Menu.Item>
+                  <Menu.Item>
+                    <span className="block text-sm text-slate-900 truncate">
+                      {user.email}
+                    </span>
+                  </Menu.Item>
+                </div>
+                <div className="py-1">
+                  <Menu.Item>
+                    <Link
+                      href="/user/profile"
+                      className="block w-full px-4 py-2 text-sm text-left text-slate-700 hover:bg-slate-100"
+                      as="button"
+                    >
+                      Profil
+                    </Link>
+                  </Menu.Item>
+                  <Menu.Item>
+                    <Link
+                      href={route("logout")}
+                      method="post"
+                      className="block w-full px-4 py-2 text-sm text-left text-slate-700 hover:bg-slate-100"
+                      as="button"
+                    >
+                      Logout
+                    </Link>
+                  </Menu.Item>
+                </div>
+              </Menu.Items>
+            </Transition>
+          </Menu>
         ) : (
-          <>
-            <Link href={route('register')}>Daftar</Link>
-            <div className="px-2">|</div>
-            <Link href={route('login')}>Login</Link>
-          </>
+          <div className="flex justify-center items-center">
+            <Link href={route("register")} as="button">
+              Daftar
+            </Link>
+            <div className="px-1">|</div>
+            <Link href={route("login")} as="button">
+              Login
+            </Link>
+          </div>
         )}
       </div>
     </nav>

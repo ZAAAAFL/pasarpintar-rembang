@@ -5,7 +5,7 @@ import { usePage } from "@inertiajs/inertia-react";
 
 export default function Main({ children }) {
   const props = usePage().props;
-  console.log(props);
+
   return (
     <>
       <header>
