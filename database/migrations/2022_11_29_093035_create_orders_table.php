@@ -16,7 +16,7 @@ class CreateOrdersTable extends Migration
     Schema::create('orders', function (Blueprint $table) {
       $table->id();
       $table->string('noFaktur');
-      $table->string('namaBarang');
+      $table->string('namaProduk');
       $table->string('hrgBeli');
       $table->string('hrgJual');
       $table->string('jumlah');

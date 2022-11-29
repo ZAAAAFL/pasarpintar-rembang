@@ -22,6 +22,7 @@ class CreateRinciOrdersTable extends Migration
       $table->bigInteger('jumlah')->default(0);
       $table->bigInteger('total')->default(0);
       $table->string('statusBayar')->default(0);
+      $table->string('metodeBayar')->default(0);
       $table->string('statusOrder')->default(0);
       $table->bigInteger('idKurir')->nullable();
       $table->string('statusKurir')->nullable(); //active atau inactive

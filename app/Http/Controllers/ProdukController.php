@@ -58,6 +58,9 @@ class ProdukController extends Controller
         'idKategoriGlobal.required' => 'Kategori Global harus dipilih!',
         'idSatuan.required' => 'Satuan harus dipilih!',
         'deskripsi.required' => 'Deskripsi harus diisi!',
+        'hrgBeli.required' => 'Harga Beli harus diisi',
+        'hrgJual.required' => 'Harga Jual harus diisi',
+        'stok.required' => 'Stok harus diisi',
       ]
     );
 
