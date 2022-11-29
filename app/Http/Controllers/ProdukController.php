@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Gambar;
 use App\Models\Produk;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
+use CloudinaryLabs\CloudinaryLaravel\Facades\Cloudinary;
+
 
 class ProdukController extends Controller
 {
@@ -15,7 +18,7 @@ class ProdukController extends Controller
    */
   public function index()
   {
-    // $produk = Produk::where('idToko', auth()->user()->idToko ?? '')->latest()->paginate(10)->withQueryString();
+    $produk = Produk::where('idToko', auth()->user()->idToko ?? '')->paginate(10)->withQueryString();
     // return Inertia::render('ListProduk', [
     //   'produk' => $produk,
     // ]);
@@ -42,7 +45,6 @@ class ProdukController extends Controller
     $request->validate(
       [
         'namaProduk' => 'required|max:225',
-        'slug' => 'required|max:225',
         'idKategori' => 'required',
         'idKategoriGlobal' => 'required',
         'idSatuan' => 'required',
@@ -58,26 +60,48 @@ class ProdukController extends Controller
         'idKategoriGlobal.required' => 'Kategori Global harus dipilih!',
         'idSatuan.required' => 'Satuan harus dipilih!',
         'deskripsi.required' => 'Deskripsi harus diisi!',
+        'hrgBeli.required' => 'Harga Beli harus diisi',
+        'hrgJual.required' => 'Harga Jual harus diisi',
+        'stok.required' => 'Stok harus diisi',
       ]
     );
 
     if ($request->hasFile('imgName')) {
-      Produk::create([
+      $file = $request->file('imgName');
+      $image = Cloudinary::upload($file->getRealPath(), ['folder' => 'products']);
+      $public_id = $image->getPublicId();
+      $url = $image->getSecurePath();
+
+      $id = Produk::create([
         'namaProduk' => $request->namaProduk,
         'slug' => Str::slug($request->namaProduk),
         'idKategori' => $request->idKategori,
+        'idKategoriGlobal' => $request->idKategoriGlobal,
         'idSatuan' => $request->idSatuan,
         'deskripsi' => $request->deskripsi,
         'hrgBeli' => $request->hrgBeli,
         'hrgJual' => $request->hrgJual,
-        'stok' => $request->stok,
+        'stokToko' => $request->stokToko,
+        'stokGudang' => $request->stokGudang,
         'terjual' => $request->terjual,
         'diskon' => $request->diskon,
         'tglAwalDiskon' => $request->tglAwalDiskon,
         'tglAkhirDiskon' => $request->tglAkhirDiskon,
-        'imgName' => $request->cloud_img,
-        'imgUrl' => $request->img_urls,
+        'imgName' => $public_id,
+        'imgUrl' => $url,
         'idToko' => $request->idToko,
+      ]);
+    }
+    $produk = Produk::find($id);
+
+    if ($request->hasFile('images')) {
+      $file = $request->file('images');
+      $image = Cloudinary::upload($file->getRealPath(), ['folder' => 'products']);
+      $public_id = $image->getPublicId();
+      $url = $image->getSecurePath();
+      $produk->update([
+        'imgName' => $public_id,
+        'imgUrl' => $url,
       ]);
     }
 
@@ -90,8 +114,9 @@ class ProdukController extends Controller
    * @param  \App\Models\Produk  $produk
    * @return \Illuminate\Http\Response
    */
-  public function show(Produk $produk)
+  public function show(Produk $produk, Request $request)
   {
+    $produk = Produk::find($request->id);
     //
   }
 
@@ -101,8 +126,9 @@ class ProdukController extends Controller
    * @param  \App\Models\Produk  $produk
    * @return \Illuminate\Http\Response
    */
-  public function edit(Produk $produk)
+  public function edit(Produk $produk, Request $request)
   {
+    $produk = Produk::find($request->id);
     //
   }
 
@@ -113,9 +139,79 @@ class ProdukController extends Controller
    * @param  \App\Models\Produk  $produk
    * @return \Illuminate\Http\Response
    */
-  public function update(Request $request, Produk $produk)
+  public function update(Request $request, Produk $produk, $id)
   {
-    //
+    $produk = Produk::find($id);
+    $request->validate(
+      [
+        'namaProduk' => 'required|max:225',
+        'idKategori' => 'required',
+        'idKategoriGlobal' => 'required',
+        'idSatuan' => 'required',
+        'deskripsi' => 'required',
+        'hrgBeli' => 'required',
+        'hrgJual' => 'required',
+        'stok' => 'required',
+        'imgName' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+      ],
+      [
+        'namaProduk.required' => 'Nama produk harus diisi!',
+        'idKategori.required' => 'Kategori Toko harus dipilih!',
+        'idKategoriGlobal.required' => 'Kategori Global harus dipilih!',
+        'idSatuan.required' => 'Satuan harus dipilih!',
+        'deskripsi.required' => 'Deskripsi harus diisi!',
+        'hrgBeli.required' => 'Harga Beli harus diisi',
+        'hrgJual.required' => 'Harga Jual harus diisi',
+        'stok.required' => 'Stok harus diisi',
+      ]
+    );
+
+    $produk->update([
+      'namaProduk' => $request->namaProduk,
+      'slug' => Str::slug($request->namaProduk),
+      'idKategori' => $request->idKategori,
+      'idKategoriGlobal' => $request->idKategoriGlobal,
+      'idSatuan' => $request->idSatuan,
+      'deskripsi' => $request->deskripsi,
+      'hrgBeli' => $request->hrgBeli,
+      'hrgJual' => $request->hrgJual,
+      'stokToko' => $request->stokToko,
+      'stokGudang' => $request->stokGudang,
+      'terjual' => $request->terjual,
+      'diskon' => $request->diskon,
+      'tglAwalDiskon' => $request->tglAwalDiskon,
+      'tglAkhirDiskon' => $request->tglAkhirDiskon,
+      'idToko' => $request->idToko,
+    ]);
+
+    if ($request->hasFile('imgName')) {
+      $imgName = $produk->imgName;
+      Cloudinary::destroy($imgName);
+
+      $file = $request->file('imgName');
+      $image = Cloudinary::upload($file->getRealPath(), ['folder' => 'products']);
+      $public_id = $image->getPublicId();
+      $url = $image->getSecurePath();
+
+      $produk->update([
+        'imgName' => $public_id,
+        'imgUrl' => $url,
+      ]);
+    }
+
+    if ($request->hasFile('images')) {
+      $file = $request->file('images');
+      $image = Cloudinary::upload($file->getRealPath(), ['folder' => 'products']);
+      $public_id = $image->getPublicId();
+      $url = $image->getSecurePath();
+      Gambar::create([
+        'imgName' => $public_id,
+        'imgUrl' => $url,
+        'idToko' => auth()->user()->idToko,
+      ]);
+    }
+
+    return redirect()->to('/list-produk')->with('message', 'Berhasil ditambah');
   }
 
   /**
@@ -124,8 +220,16 @@ class ProdukController extends Controller
    * @param  \App\Models\Produk  $produk
    * @return \Illuminate\Http\Response
    */
-  public function destroy(Produk $produk)
+  public function destroy(Produk $produk, $id)
   {
-    //
+    $produk = Produk::find($id);
+    Cloudinary::destroy($produk->imgName);
+    $images = Gambar::where('idProduk', $id)->get();
+    foreach ($images as $key => $image) {
+      Cloudinary::destroy($image->imgName);
+    }
+    $images->delete();
+    $produk->delete();
+    return back()->with('message', 'Produk berhasil dihapus');
   }
 }

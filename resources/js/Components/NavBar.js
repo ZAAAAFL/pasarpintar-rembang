@@ -1,14 +1,16 @@
 import { Link, usePage } from "@inertiajs/inertia-react";
-import BottNavBar from "./Header/BottNavBar";
 import TopNavBar from "./Header/TopNavBar";
+import MidNavBar from "./Header/MidNavBar";
+import BottNavBar from "./Header/BottNavBar";
 
 const NavBar = ({ appName, user }) => {
   const { url } = usePage();
 
   return (
     <>
-      <TopNavBar appName={appName} user={user} url={url} />
-      <BottNavBar url={url} user={user} />
+      <TopNavBar user={user} />
+      <MidNavBar appName={appName} user={user} url={url} />
+      {/* <BottNavBar /> */}
     </>
   );
 };

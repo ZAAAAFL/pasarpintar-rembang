@@ -23,7 +23,8 @@ class CreateProduksTable extends Migration
       $table->string('deskripsi')->nullable();
       $table->bigInteger('hrgBeli')->nullable();
       $table->bigInteger('hrgJual')->nullable();
-      $table->bigInteger('stok')->nullable();
+      $table->bigInteger('stokToko')->nullable();
+      $table->bigInteger('stokGudang')->nullable();
       $table->bigInteger('terjual')->nullable();
       $table->bigInteger('diskon')->nullable();
       $table->date('tglAwalDiskon')->nullable();

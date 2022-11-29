@@ -3,7 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\Toko;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
+use App\Rules\PhoneNumber;
 
 class TokoController extends Controller
 {
@@ -14,6 +18,7 @@ class TokoController extends Controller
    */
   public function index()
   {
+    $toko = Toko::latest()->paginate(10)->withQueryString();
     //
   }
 
@@ -35,7 +40,34 @@ class TokoController extends Controller
    */
   public function store(Request $request)
   {
-    //
+    $request->validate([
+      'namaToko' => 'required',
+      'namaPengelola' => 'required',
+      'email' => 'required|email|unique:tokos,email',
+      'password' => 'required|min:8',
+      'noHp' => 'required|min:10',
+      'alamat' => 'required|min:10',
+    ]);
+
+    Toko::create([
+      'namaTOko' => $request->namaToko,
+      'namaPengelola' => $request->namaPengelola,
+      'email' => $request->email,
+      'password' => $request->password,
+      'noHp' => $request->noHp,
+      'alamat' => $request->alamat,
+    ]);
+
+    User::create([
+      'name' => $request->namaPengelola,
+      'email' => $request->email,
+      'password' => Hash::make($request->password),
+      'no_hp' => $request->noHp,
+      'alamat' => $request->alamat,
+      'level' => 'toko',
+    ]);
+
+    return back()->with('message', 'Toko berhasil di buat');
   }
 
   /**
@@ -44,8 +76,9 @@ class TokoController extends Controller
    * @param  \App\Models\Toko  $toko
    * @return \Illuminate\Http\Response
    */
-  public function show(Toko $toko)
+  public function show(Toko $toko, Request $request)
   {
+    $toko = Toko::find($request->id);
     //
   }
 
@@ -55,8 +88,9 @@ class TokoController extends Controller
    * @param  \App\Models\Toko  $toko
    * @return \Illuminate\Http\Response
    */
-  public function edit(Toko $toko)
+  public function edit(Toko $toko, Request $request)
   {
+    $toko = Toko::find($request->id);
     //
   }
 
@@ -69,7 +103,35 @@ class TokoController extends Controller
    */
   public function update(Request $request, Toko $toko)
   {
-    //
+    $request->validate([
+      'namaToko' => 'required',
+      'namaPengelola' => 'required',
+      'email' => 'required|email|unique:tokos,email',
+      'password' => 'required|min:8',
+      'noHp' => ['required', 'string', new PhoneNumber],
+      'alamat' => 'required|min:10',
+    ]);
+
+    Toko::create([
+      'namaTOko' => $request->namaToko,
+      'slug' => Str::slug($request->namaToko),
+      'namaPengelola' => $request->namaPengelola,
+      'email' => $request->email,
+      'password' => $request->password,
+      'noHp' => $request->noHp,
+      'alamat' => $request->alamat,
+    ]);
+
+    User::create([
+      'name' => $request->namaPengelola,
+      'email' => $request->email,
+      'password' => Hash::make($request->password),
+      'no_hp' => $request->noHp,
+      'alamat' => $request->alamat,
+      'level' => 'toko',
+    ]);
+
+    return back()->with('message', 'Toko berhasil di buat');
   }
 
   /**
@@ -78,8 +140,10 @@ class TokoController extends Controller
    * @param  \App\Models\Toko  $toko
    * @return \Illuminate\Http\Response
    */
-  public function destroy(Toko $toko)
+  public function destroy(Request $request)
   {
-    //
+    $toko = Toko::find($request->id);
+    $toko->delete();
+    return back()->with('message', 'Toko berhasil di hapus');
   }
 }
