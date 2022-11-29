@@ -2,7 +2,7 @@ import React from 'react';
 import Authenticated from '@/Layouts/Authenticated';
 import { Head } from '@inertiajs/inertia-react';
 
-export default function Dashboard(props) {
+export default function DashboardUser(props) {
     return (
         <Authenticated
             auth={props.auth}
