@@ -18,7 +18,7 @@ use Inertia\Inertia;
 Route::get('/', [HomeController::class, 'index'])->name('index');
 Route::get('/produk', [HomeController::class, 'produk'])->name('produk');
 
-Route::get('/dashboard', function () {
+Route::get('/user/profile', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 

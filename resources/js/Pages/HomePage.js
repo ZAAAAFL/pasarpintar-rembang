@@ -3,7 +3,6 @@ import { Head } from "@inertiajs/inertia-react";
 import Main from "@/Layouts/Main";
 
 const HomePage = (props) => {
-  console.log(props);
   return (
     <>
       <Head title={props.title} />

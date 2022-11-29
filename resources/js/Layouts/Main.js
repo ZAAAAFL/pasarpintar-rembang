@@ -4,15 +4,15 @@ import NavBar from "@/Components/NavBar";
 import { usePage } from "@inertiajs/inertia-react";
 
 export default function Main({ children }) {
-  const { app } = usePage().props;
-
+  const props = usePage().props;
+  console.log(props);
   return (
     <>
       <header>
-        <NavBar appName={app.name} />
+        <NavBar appName={props.app.name} user={props.auth.user} />
       </header>
       {children}
-      <Footer appName={app.name} />
+      <Footer appName={props.app.name} />
     </>
   );
 }
