@@ -15,7 +15,7 @@ class KategoriController extends Controller
    */
   public function index()
   {
-    //
+    $kategori = Kategori::latest()->paginate(10)->withQueryString();
   }
 
   /**
@@ -79,16 +79,17 @@ class KategoriController extends Controller
   public function update(Request $request, Kategori $kategori, $id)
   {
     $kategori = Kategori::find($id);
+    $request->validate([
+      'namaKategori' => 'required|max:255',
+    ]);
 
     $data = [
-      'namaKategori' => 'required|max:255',
-      'slug' => 'max:255',
-      'idToko' => 'required',
+      'namaKategori' => $request->namaKategori,
+      'slug' => Str::slug($request->namaKategori, '-'),
+      'idToko' => auth()->user()->idToko,
     ];
 
-    $data['slug'] = Str::slug($request->namaKategori);
-    $validatedData = $request->validate($data);
-    $kategori->update($validatedData);
+    $kategori->update($data);
     return back()->with('message', 'Kategori sudah berhasil diupdate');
   }
 

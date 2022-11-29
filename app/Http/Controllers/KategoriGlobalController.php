@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Kategori;
 use App\Models\KategoriGlobal;
 use Illuminate\Support\Str;
 
@@ -16,6 +17,7 @@ class KategoriGlobalController extends Controller
    */
   public function index()
   {
+    $kategoriGlobal = KategoriGlobal::latest()->paginate(10)->withQueryString();
     //
   }
 
@@ -63,8 +65,9 @@ class KategoriGlobalController extends Controller
    * @param  \App\Models\KategoriGlobal  $kategoriGlobal
    * @return \Illuminate\Http\Response
    */
-  public function edit(KategoriGlobal $kategoriGlobal)
+  public function edit(KategoriGlobal $kategoriGlobal, $id)
   {
+    $kategoriGlobal = KategoriGlobal::find($id);
     //
   }
 
@@ -79,12 +82,18 @@ class KategoriGlobalController extends Controller
   {
     $kategoriGlobal = KategoriGlobal::find($id);
 
+    $request->validate([
+      'namaKategoriGlobal' => 'required',
+    ]);
+
+
     $data = [
-      'namaKategoriGlobal' => 'required|max:255',
+      'namaKategoriGlobal' => $request->namaKategoriGlobal,
+      'slug' => Str::slug($request->namaKategoriGlobal),
+      'idToko' => auth()->user()->idToko,
     ];
-    $data['slug'] = Str::slug($request->namaKategoriGlobal);
-    $validatedData = $request->validate($data);
-    $kategoriGlobal->update($validatedData);
+
+    $kategoriGlobal->update($data);
     return back()->with('message', 'Kategori Global berhasil diupdate');
   }
 
