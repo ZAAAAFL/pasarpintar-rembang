@@ -2,7 +2,7 @@ import { Link, usePage } from "@inertiajs/inertia-react";
 
 const MidNavBar = ({ appName, url, user }) => {
   return (
-    <nav className="px-3.5 pb-2 bg-white shadow-[0_10px_15px_-3px_rgba(0,0,0,0.1)]">
+    <nav className="px-3.5 py-2 bg-sky-200 shadow-[0_10px_15px_-3px_rgba(0,0,0,0.1)]">
       <div className="container flex flex-wrap items-center justify-between">
         <Link href={route("index")} className="items-center">
           <span className="self-center xs:flex text-2xl font-semibold">
@@ -30,9 +30,9 @@ const MidNavBar = ({ appName, url, user }) => {
                 clipRule="evenodd"
               ></path>
             </svg>
-            <span className="sr-only">Search</span>
+            <span className="sr-only">Cari</span>
           </button>
-          <div className="relative hidden md:block mr-3">
+          <div className="relative w-72 hidden md:block mr-3">
             <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
               <svg
                 className="w-5 h-5 text-slate-800"
@@ -47,13 +47,13 @@ const MidNavBar = ({ appName, url, user }) => {
                   clipRule="evenodd"
                 ></path>
               </svg>
-              <span className="sr-only">Search icon</span>
+              <span className="sr-only">Icon Cari</span>
             </div>
             <input
               type="text"
               id="search-navbar-md-block"
               className="block w-full p-2 pl-10 text-sm text-slate-900 border border-slate-400 rounded-md bg-slate-50 focus:ring-blue-400 focus:border-blue-400"
-              placeholder="Search..."
+              placeholder="Cari..."
             />
           </div>
           {user && <Link>Cart</Link>}
@@ -82,7 +82,7 @@ const MidNavBar = ({ appName, url, user }) => {
               type="text"
               id="search-navbar-md-hidden"
               className="block w-full p-2 pl-10 text-sm text-slate-900 border border-slate-400 rounded-md bg-slate-50 focus:ring-blue-400 focus:border-blue-400"
-              placeholder="Search..."
+              placeholder="Cari..."
             />
           </div>
         </div>
