@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Produk;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
+use CloudinaryLabs\CloudinaryLaravel\Facades\Cloudinary;
+
 
 class ProdukController extends Controller
 {
@@ -65,21 +67,28 @@ class ProdukController extends Controller
     );
 
     if ($request->hasFile('imgName')) {
+      $file = $request->file('imgName');
+      $image = Cloudinary::upload($file->getRealPath(), ['folder' => 'products']);
+      $public_id = $image->getPublicId();
+      $url = $image->getSecurePath();
+
       Produk::create([
         'namaProduk' => $request->namaProduk,
         'slug' => Str::slug($request->namaProduk),
         'idKategori' => $request->idKategori,
+        'idKategoriGlobal' => $request->idKategoriGlobal,
         'idSatuan' => $request->idSatuan,
         'deskripsi' => $request->deskripsi,
         'hrgBeli' => $request->hrgBeli,
         'hrgJual' => $request->hrgJual,
-        'stok' => $request->stok,
+        'stokToko' => $request->stokToko,
+        'stokGudang' => $request->stokGudang,
         'terjual' => $request->terjual,
         'diskon' => $request->diskon,
         'tglAwalDiskon' => $request->tglAwalDiskon,
         'tglAkhirDiskon' => $request->tglAkhirDiskon,
-        'imgName' => $request->cloud_img,
-        'imgUrl' => $request->img_urls,
+        'imgName' => $public_id,
+        'imgUrl' => $url,
         'idToko' => $request->idToko,
       ]);
     }
