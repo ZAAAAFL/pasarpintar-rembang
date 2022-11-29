@@ -8,9 +8,9 @@ const NavBar = ({ appName, user }) => {
 
   return (
     <>
-      <TopNavBar />
+      <TopNavBar user={user} />
       <MidNavBar appName={appName} user={user} url={url} />
-      <BottNavBar />
+      {/* <BottNavBar /> */}
     </>
   );
 };

@@ -10,7 +10,7 @@ const HomePage = (props) => {
       <Head title={props.title} />
       <Carousel/>
       <Kategori />
-      <div className="h-screen"></div>;
+      <div className="h-screen"></div>
     </>
   );
 };
