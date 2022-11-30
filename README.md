@@ -19,7 +19,7 @@ composer update
 - npm
 
 ```bash
-npm Install
+npm install
 npm run dev
 ```
 
