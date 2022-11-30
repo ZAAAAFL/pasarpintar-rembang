@@ -12,7 +12,7 @@ const TopNavBar = ({ user }) => {
             <Menu as="div" className="relative inline-block">
               <Menu.Button
                 type="button"
-                className="inline-flex w-full justify-center rounded-md bg-transparent px-4 py-2 text-sm font-medium text-white hover:bg-slate-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75"
+                className="inline-flex w-full justify-center rounded-md bg-transparent py-1 text-sm font-medium text-white hover:bg-slate-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75"
               >
                 <ChevronDownIcon
                   className="mr-2 -ml-1 h-5 w-5 text-black hover:text-gray-700"

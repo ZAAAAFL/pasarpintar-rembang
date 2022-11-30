@@ -2,7 +2,7 @@ import { Link, usePage } from "@inertiajs/inertia-react";
 
 const MidNavBar = ({ appName, url, user }) => {
   return (
-    <nav className="px-3.5 py-2 bg-sky-600 text-white shadow-[0_10px_15px_-3px_rgba(0,0,0,0.1)]">
+    <nav className="px-3.5 py-2 bg-sky-400 text-white shadow-[0_10px_15px_-3px_rgba(0,0,0,0.1)]">
       <div className="container flex flex-wrap items-center justify-between">
         <Link href={route("index")} className="items-center">
           <span className="self-center xs:flex text-2xl font-semibold">
