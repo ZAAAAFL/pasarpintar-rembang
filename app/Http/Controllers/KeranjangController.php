@@ -143,5 +143,6 @@ class KeranjangController extends Controller
       'buktiUrl' => '',
     ];
     $order = DB::table('rinci_orders')->insert($dataRinci);
+    return redirect()->to('/print');
   }
 }
