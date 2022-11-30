@@ -6,12 +6,12 @@ import Kategori from "@/Components/HomePage/Kategori";
 
 const HomePage = (props) => {
   return (
-    <>
+    <div className="space-y-3">
       <Head title={props.title} />
       <Carousel/>
       <Kategori />
       <div className="h-screen"></div>
-    </>
+    </div>
   );
 };
 

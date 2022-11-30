@@ -17,6 +17,7 @@ class KeranjangController extends Controller
   public function index()
   {
     $keranjang = Keranjang::where('id', auth()->user()->id)->get();
+    //
   }
 
   /**
@@ -134,14 +135,18 @@ class KeranjangController extends Controller
       'idUser' => auth()->user()->id,
       'jumlah' => $keranjang->sum('jumlah'),
       'total' => $total,
-      'statusBayar' => '',
+      'statusBayar' => 'belum bayar',
       'metodeBayar' => '',
-      'statusOrder' => '',
+      'statusOrder' => 'dikemas',
       'idKurir' => '',
       'statusKurir' => '',
       'buktiName' => '',
       'buktiUrl' => '',
+      'buktiSamapaiName' => '',
+      'buktiSamapaiUrl' => '',
     ];
+
     $order = DB::table('rinci_orders')->insert($dataRinci);
+    return redirect()->to('/print');
   }
 }

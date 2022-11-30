@@ -38,7 +38,7 @@ class AuthenticatedSessionController extends Controller
         $request->session()->regenerate();
 
         if (auth()->user()->level === "customer") {
-          return redirect()->intended(RouteServiceProvider::HOMEUSER);
+          return redirect()->intended();
         } else if (auth()->user()->level === "toko") {
           return redirect()->intended(RouteServiceProvider::HOMETOKO);
         } else if (auth()->user()->level === "kurir") {

@@ -10,16 +10,20 @@ module.exports = {
 
   theme: {
     container: {
-      center: true
+      center: true,
     },
     extend: {
       fontFamily: {
         sans: ["Nunito", ...defaultTheme.fontFamily.sans],
       },
+      screens: {
+        "2xl": "1400px",
+        "3xl": "1536px",
+      },
     },
     screens: {
-      'xxs': '360px',
-      'xs': '475px',
+      "2xs": "360px",
+      xs: "475px",
       ...defaultTheme.screens,
     },
   },
