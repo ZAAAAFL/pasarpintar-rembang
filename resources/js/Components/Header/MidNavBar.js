@@ -36,7 +36,7 @@ const MidNavBar = ({ appName, url, user }) => {
           <div className="relative w-72 hidden md:block mr-3">
             <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
               <svg
-                className="w-5 h-5 text-white"
+                className="w-5 h-5 text-slate-800"
                 aria-hidden="true"
                 fill="currentColor"
                 viewBox="0 0 20 20"
@@ -53,7 +53,7 @@ const MidNavBar = ({ appName, url, user }) => {
             <input
               type="text"
               id="search-navbar-md-block"
-              className="block w-full p-2 pl-10 text-sm text-slate-900 border border-slate-400 rounded-md bg-slate-50 focus:ring-blue-400 focus:border-blue-400"
+              className="block w-full p-2 pl-10 text-sm text-slate-900 border border-slate-900 rounded-md bg-slate-50 focus:ring-blue-400 focus:border-blue-400"
               placeholder="Cari..."
             />
           </div>
@@ -66,27 +66,6 @@ const MidNavBar = ({ appName, url, user }) => {
               <span className="top-[-1px] left-[17px] absolute p-1 text-[10px] leading-none text-center align-middle bg-red-500 rounded-full">
                 99+
               </span>
-                {/* <button
-                  class="py-4 px-1 relative border-2 border-transparent text-gray-800 rounded-full hover:text-gray-400 focus:outline-none focus:text-gray-500 transition duration-150 ease-in-out"
-                  aria-label="Cart"
-                >
-                  <svg
-                    class="h-6 w-6"
-                    fill="none"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path>
-                  </svg>
-                  <span className="absolute inset-0 object-right-top -mr-6">
-                    <div className="inline-flex items-center px-1.5 py-0.5 border-2 border-white rounded-full text-xs font-semibold leading-4 bg-red-500 text-white">
-                      99+
-                    </div>
-                  </span>
-                </button> */}
               </div>
             </Link>
           )}
@@ -114,7 +93,7 @@ const MidNavBar = ({ appName, url, user }) => {
             <input
               type="text"
               id="search-navbar-md-hidden"
-              className="block w-full p-2 pl-10 text-sm text-slate-900 border border-slate-400 rounded-md bg-slate-50 focus:ring-blue-400 focus:border-blue-400"
+              className="block w-full p-2 pl-10 text-sm text-slate-900 border border-slate-900 rounded-md bg-slate-50 focus:ring-blue-400 focus:border-blue-400"
               placeholder="Cari..."
             />
           </div>
