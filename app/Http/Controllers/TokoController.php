@@ -49,7 +49,17 @@ class TokoController extends Controller
       'alamat' => 'required|min:10',
     ]);
 
+    $user = User::create([
+      'name' => $request->namaPengelola,
+      'email' => $request->email,
+      'password' => Hash::make($request->password),
+      'no_hp' => $request->noHp,
+      'alamat' => $request->alamat,
+      'level' => 'toko',
+    ]);
+
     Toko::create([
+      'idUser' => $user,
       'namaTOko' => $request->namaToko,
       'namaPengelola' => $request->namaPengelola,
       'email' => $request->email,
@@ -58,14 +68,6 @@ class TokoController extends Controller
       'alamat' => $request->alamat,
     ]);
 
-    User::create([
-      'name' => $request->namaPengelola,
-      'email' => $request->email,
-      'password' => Hash::make($request->password),
-      'no_hp' => $request->noHp,
-      'alamat' => $request->alamat,
-      'level' => 'toko',
-    ]);
 
     return back()->with('message', 'Toko berhasil di buat');
   }
