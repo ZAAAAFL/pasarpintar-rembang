@@ -73,11 +73,11 @@ const TopNavBar = ({ user }) => {
             </Menu>
           ) : (
             <div className="flex justify-end items-center">
-              <Link href={route("register")} as="button">
+              <Link href={route("register")} className="text-slate-800" as="button">
                 Daftar
               </Link>
               <div className="px-1">|</div>
-              <Link href={route("login")} as="button">
+              <Link href={route("login")} className="text-slate-800" as="button">
                 Login
               </Link>
             </div>

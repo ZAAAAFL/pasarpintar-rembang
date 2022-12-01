@@ -20,10 +20,14 @@ use Inertia\Inertia;
 
 Route::get('/', [HomeController::class, 'index'])->name('index');
 
-Route::get('/admin-page', [AdminController::class, 'index'])->name('index');
+Route::get('/admin-page', [AdminController::class, 'index'])->name('admin.index');
 
 Route::get('/user/profile', function () {
   return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::get('/kurir', function () {
+  return Inertia::render('Kurir');
+});
 
 require __DIR__ . '/auth.php';
