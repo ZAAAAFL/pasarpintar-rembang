@@ -26,4 +26,8 @@ Route::get('/user/profile', function () {
   return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
+Route::get('/kurir', function () {
+  return Inertia::render('Kurir');
+});
+
 require __DIR__ . '/auth.php';

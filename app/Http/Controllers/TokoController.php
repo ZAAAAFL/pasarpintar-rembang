@@ -45,7 +45,7 @@ class TokoController extends Controller
       'namaPengelola' => 'required',
       'email' => 'required|email|unique:tokos,email',
       'password' => 'required|min:8',
-      'noHp' => 'required|min:10',
+      'noHp' => ['required', 'string', new PhoneNumber],
       'alamat' => 'required|min:10',
     ]);
 
