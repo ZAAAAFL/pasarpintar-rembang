@@ -2,16 +2,16 @@ import React from "react";
 
 const Carousel = () => {
   return (
-    <div className="container mt-2">
-      <div className="grid grid-cols-1 lg:grid-cols-4 lg:grid-rows-4 gap-1 max-w-5xl mx-auto">
+    <div className="container">
+      <div className="grid grid-cols-1 lg:grid-cols-6 lg:grid-rows-6 gap-1 max-w-5xl mx-auto">
         <div
           id="animation-carousel"
-          className="relative col-span-1 lg:col-span-3 lg:row-span-4"
+          className="relative col-span-1 lg:col-span-4 lg:row-span-6"
           data-carousel="static"
         >
-          <div className="relative w-full h-56 overflow-hidden lg:h-full">
+          <div className="relative aspect-video w-full h-56 overflow-hidden lg:h-full">
             <div
-              className="duration-500 ease-linear absolute inset-0 transition-all transform -translate-x-full z-10 hidden"
+              className="duration-200 ease-linear absolute inset-0 transition-all transform -translate-x-full z-10 hidden"
               data-carousel-item=""
             >
               <img
@@ -21,7 +21,7 @@ const Carousel = () => {
               />
             </div>
             <div
-              className="duration-500 ease-linear absolute inset-0 transition-all transform -translate-x-full z-10 hidden"
+              className="duration-200 ease-linear absolute inset-0 transition-all transform -translate-x-full z-10 hidden"
               data-carousel-item=""
             >
               <img
@@ -31,7 +31,7 @@ const Carousel = () => {
               />
             </div>
             <div
-              className="duration-500 ease-linear absolute inset-0 transition-all transform -translate-x-full z-10"
+              className="duration-200 ease-linear absolute inset-0 transition-all transform -translate-x-full z-10"
               data-carousel-item=""
             >
               <img
@@ -41,7 +41,7 @@ const Carousel = () => {
               />
             </div>
             <div
-              className="duration-500 ease-linear absolute inset-0 transition-all transform translate-x-0 z-20"
+              className="duration-200 ease-linear absolute inset-0 transition-all transform translate-x-0 z-20"
               data-carousel-item=""
             >
               <img
@@ -100,18 +100,18 @@ const Carousel = () => {
             </span>
           </button>
         </div>
-        <div className="hidden lg:block lg:row-span-2">
+        <div className="hidden lg:block lg:col-span-2 lg:row-span-3">
           <div
-            className="md:h-32 bg-cover bg-center"
+            className="md:h-full bg-center aspect-video"
             style={{
               backgroundImage:
                 "url(https://flowbite.com/docs/images/carousel/carousel-1.svg)",
             }}
           />
         </div>
-        <div className="hidden lg:block lg:row-span-2">
+        <div className="hidden lg:block lg:col-span-2 lg:row-span-3">
           <div
-            className="md:h-32 bg-cover bg-center"
+            className="md:h-full bg-center aspect-video"
             style={{
               backgroundImage:
                 "url(https://flowbite.com/docs/images/carousel/carousel-1.svg)",
