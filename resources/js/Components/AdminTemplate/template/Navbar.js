@@ -1,3 +1,4 @@
+import Input from "@/Components/Input";
 import { Head, Link } from "@inertiajs/inertia-react";
 import React from "react";
 
@@ -11,16 +12,22 @@ const Navbar = () => {
         <div className="flex flex-wrap items-center">
           <div className="flex flex-shrink md:w-1/3 justify-center md:justify-start text-white">
             <Link href="#" aria-label="Home">
-              <h1 className="font-bold text-1xl md:text-2xl pl-2">{Head}</h1>
+              <h1 className="font-bold text-1xl md:text-2xl pl-2">
+                Admin | PasarPintar
+              </h1>
             </Link>
           </div>
 
           <div className="flex md:w-1/3 justify-center md:justify-start text-white px-2">
             <span className="relative w-full">
-              <div
-                className="absolute search-icon"
-                style="top: 1rem; left: .8rem;"
-              >
+              <div className="absolute search-icon top-4 left-[.8rem]">
+                <Input
+                  aria-label="search"
+                  type="search"
+                  id="search"
+                  placeholder="Search"
+                  className="w-full bg-gray-900 text-white transition border border-transparent focus:outline-none focus:border-gray-400 rounded py-3 px-2 pl-10 appearance-none leading-normal"
+                />
                 <svg
                   className="fill-current pointer-events-none text-white w-4 h-4"
                   xmlns="http://www.w3.org/2000/svg"

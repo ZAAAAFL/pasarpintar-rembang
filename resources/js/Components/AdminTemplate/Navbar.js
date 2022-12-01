@@ -7,7 +7,6 @@ const NavBar = ({ appName, user }) => {
   return (
     <>
       <Navbar appName={appName} user={user} url={url} />
-      {/* <BottNavBar /> */}
     </>
   );
 };
