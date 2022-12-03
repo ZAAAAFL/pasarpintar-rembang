@@ -15,6 +15,64 @@ export default function Cart(props) {
       </header>
       {/* {children} */}
       <div className="h-screen">
+
+        {/* mobile view */}
+        <div className="md:hidden">
+          <div className="p-5 bg-white">{props.title}</div>
+
+          <div className="flex m-3 bg-white border-b hover:bg-slate-100 my-2">
+            <div className="m-2">
+              <Input type="checkbox"></Input>
+              <img src="https://flowbite.com/docs/images/carousel/carousel-1.svg" className="w-20 h-20 rounded-md" />
+            </div>
+            <div className="m-2">
+              <span className="mx-2">Laptop Acer</span><br></br>
+              <div className="mx-2">1 x 20.000 = Rp. 20.000</div>
+              <div className="flex mx-2">
+                <Input value="1" className="w-14 h-8 text-center"></Input>
+                <Link className="bg-yellow-300 text-black p-1 rounded-md ml-3">Update</Link>
+                <Link className="bg-red-600 text-white p-1 rounded-md ml-3">Delete</Link>
+              </div>
+            </div>
+          </div>
+          <div className="flex m-3 bg-white border-b hover:bg-slate-100 my-2">
+            <div className="m-2">
+              <img src="https://flowbite.com/docs/images/carousel/carousel-1.svg" className="w-20 h-20 rounded-md" />
+            </div>
+            <div className="m-2">
+              <span className="mx-2">Laptop Acer</span><br></br>
+              <div className="mx-2">1 x 20.000 = Rp. 20.000</div>
+              <div className="flex mx-2">
+                <Input value="1" className="w-14 h-8 text-center"></Input>
+                <Link className="bg-yellow-300 text-black p-1 rounded-md ml-3">Update</Link>
+                <Link className="bg-red-600 text-white p-1 rounded-md ml-3">Delete</Link>
+              </div>
+            </div>
+          </div>
+          <div className="flex m-3 bg-white border-b hover:bg-slate-100 my-2">
+            <div className="m-2">
+              <img src="https://flowbite.com/docs/images/carousel/carousel-1.svg" className="w-20 h-20 rounded-md" />
+            </div>
+            <div className="m-2">
+              <span className="mx-2">Laptop Acer</span><br></br>
+              <div className="mx-2">1 x 20.000 = Rp. 20.000</div>
+              <div className="flex mx-2">
+                <Input value="1" className="w-14 h-8 text-center"></Input>
+                <Link className="bg-yellow-300 text-black p-1 rounded-md ml-3">Update</Link>
+                <Link className="bg-red-600 text-white p-1 rounded-md ml-3">Delete</Link>
+              </div>
+            </div>
+          </div>
+
+          <div className="p-4 text-center text-bold bg-white hover:bg-slate-100 text-sky-600">Total: Rp. 60.000</div>
+          <div className="grid grid-cols-2 mx-auto mt-4">
+            <div className="mx-auto"><Link className="bg-blue-600 text-white p-2 rounded-md text-center">Belanja lagi</Link></div>
+            <div className="mx-auto"><Link className="bg-green-500 p-2 text-white rounded-md text-center">Checkout</Link></div>
+          </div>
+        </div>
+        {/* end mobile view */}
+
+        {/* large view and medium view */}
         <div className="space-y-3 hidden md:block">
           <div className="container mx-auto mt-10">
             <div className="flex shadow-md my-10">
@@ -32,7 +90,7 @@ export default function Cart(props) {
                 <div className="flex items-center hover:bg-gray-100 -mx-8 px-6 py-5">
                   <div className="flex w-2/5">
                     <div className="w-20">
-                      <img className="h-24" src="https://drive.google.com/uc?id=18KkAVkGFvaGNqPy2DIvTqmUH_nk39o3z" alt="" />
+                      <img className="h-24" src="https://flowbite.com/docs/images/carousel/carousel-1.svg" alt="" />
                     </div>
                     <div className="flex flex-col justify-between ml-4 flex-grow">
                       <span className="font-bold text-sm">Iphone 6S</span>
