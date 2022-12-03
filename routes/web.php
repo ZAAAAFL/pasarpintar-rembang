@@ -21,16 +21,18 @@ use Inertia\Inertia;
 
 Route::get('/', [HomeController::class, 'index'])->name('index');
 
+Route::get('/produk/{title}', [HomeController::class, 'produk'])->name('produk.detail');
+
 Route::get('/admin-page', [AdminController::class, 'index'])->name('admin.index');
 
 Route::get('/user/profile', function () {
   return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::get('/cart', [KeranjangController::class, 'index']);
+Route::get('/cart', [KeranjangController::class, 'index'])->name('cart.index');
 
 Route::get('/kurir', function () {
   return Inertia::render('Kurir');
-});
+})->name('kurir.index');
 
 require __DIR__ . '/auth.php';

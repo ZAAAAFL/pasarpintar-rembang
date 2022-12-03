@@ -4,12 +4,12 @@ import MidNavBar from "./Header/MidNavBar";
 import BottNavBar from "./Header/BottNavBar";
 
 const NavBar = ({ appName, user }) => {
-  const { url } = usePage();
+  const { url, props } = usePage();
 
   return (
     <>
       <TopNavBar user={user} />
-      <MidNavBar appName={appName} user={user} url={url} />
+      <MidNavBar appName={appName} user={user} props={props} currentUrl={url} />
     </>
   );
 };
