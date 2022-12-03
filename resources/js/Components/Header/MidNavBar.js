@@ -58,14 +58,14 @@ const MidNavBar = ({ appName, url, user }) => {
             />
           </div>
           {user && (
-            <Link>
+            <Link href={'/cart'}>
               <div className="relative mr-3">
                 <div className="flex items-center justify-center p-2">
-                <ShoppingCartIcon className="h-6 w-6" />
-              </div>
-              <span className="top-[-1px] left-[17px] absolute p-1 text-[10px] leading-none text-center align-middle bg-red-500 rounded-full">
-                99+
-              </span>
+                  <ShoppingCartIcon className="h-6 w-6" />
+                </div>
+                <span className="top-[-1px] left-[17px] absolute p-1 text-[10px] leading-none text-center align-middle bg-red-500 rounded-full">
+                  99+
+                </span>
               </div>
             </Link>
           )}

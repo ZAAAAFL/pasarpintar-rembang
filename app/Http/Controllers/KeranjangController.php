@@ -6,6 +6,7 @@ use App\Models\Keranjang;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Inertia\Inertia;
 
 class KeranjangController extends Controller
 {
@@ -17,7 +18,10 @@ class KeranjangController extends Controller
   public function index()
   {
     $keranjang = Keranjang::where('id', auth()->user()->id)->get();
-    //
+    return Inertia::render('Cart', [
+      'title' => 'Keranjang Belanja',
+      'keranjang' => $keranjang,
+    ]);
   }
 
   /**

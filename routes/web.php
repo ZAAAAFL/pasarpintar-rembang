@@ -5,6 +5,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProdukController;
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\KeranjangController;
 use Inertia\Inertia;
 
 /*
@@ -25,6 +26,8 @@ Route::get('/admin-page', [AdminController::class, 'index'])->name('admin.index'
 Route::get('/user/profile', function () {
   return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::get('/cart', [KeranjangController::class, 'index']);
 
 Route::get('/kurir', function () {
   return Inertia::render('Kurir');
