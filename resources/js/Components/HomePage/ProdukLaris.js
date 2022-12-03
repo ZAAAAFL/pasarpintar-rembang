@@ -1,4 +1,3 @@
-import { ShoppingCartIcon } from "@heroicons/react/20/solid";
 import { Link } from "@inertiajs/inertia-react";
 import React from "react";
 
