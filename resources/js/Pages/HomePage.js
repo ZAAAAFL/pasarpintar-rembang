@@ -16,7 +16,6 @@ const HomePage = (props) => {
       <ProdukLaris />
       <ProdukPromo />
       <ProdukAcak />
-      <div className="h-screen"></div>
     </div>
   );
 };

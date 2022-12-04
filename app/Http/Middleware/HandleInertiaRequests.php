@@ -45,6 +45,13 @@ class HandleInertiaRequests extends Middleware
       'flash' => [
         'message' => fn () => $request->session()->get('message')
       ],
+      'urlPrev' => function() {
+        if (url()->previous() !== route('login') && url()->previous() !== url()->current()) {
+          return url()->previous();
+        } else {
+          return 'empty';
+        }
+      },
       'ziggy' => function () {
         return (new Ziggy)->toArray();
       },

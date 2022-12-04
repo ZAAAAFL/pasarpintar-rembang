@@ -1,22 +1,38 @@
-import { ShoppingCartIcon } from "@heroicons/react/20/solid";
-import { Link, usePage } from "@inertiajs/inertia-react";
+import { ChevronLeftIcon, ShoppingCartIcon } from "@heroicons/react/20/solid";
+import { Inertia } from "@inertiajs/inertia";
+import { Link } from "@inertiajs/inertia-react";
 
-const MidNavBar = ({ appName, url, user }) => {
+const MidNavBar = ({ appName, currentUrl, props, user }) => {
+  let urlPrev = props.urlPrev;
+
+  const back = () => {
+    if (urlPrev !== "empty") {
+      Inertia.visit(urlPrev);
+    }
+  };
+
   return (
     <nav className="px-3.5 py-2 bg-sky-400 text-white">
       <div className="container flex flex-wrap items-center justify-between">
-        <Link href={route("index")} className="items-center ml-2">
-          <span className="self-center xs:flex text-2xl font-semibold">
-            <span className="mr-1.5">{appName}</span>
-          </span>
-        </Link>
+        <div className="flex items-center justify-center">
+          {currentUrl !== "/" ? (
+            <ChevronLeftIcon className="w-6 h-6 mr-2" onClick={back} />
+          ) : (
+            <></>
+          )}
+          <Link href={route("index")} className="items-center ml-2">
+            <span className="self-center text-lg sm:text-2xl font-semibold">
+              <span className="mr-1.5">{appName}</span>
+            </span>
+          </Link>
+        </div>
         <div className="flex items-center md:order-2 mr-2">
           <button
             type="button"
             data-collapse-toggle="navbar-search"
             aria-controls="navbar-search"
             aria-expanded="false"
-            className="md:hidden text-white hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-slate-300 rounded-md text-sm p-2.5 mr-1"
+            className="md:hidden text-white hover:bg-sky-800 focus:outline-none focus:ring-2 focus:ring-slate-300 rounded-md text-sm p-2.5 mr-1"
           >
             <svg
               className="w-5 h-5"
@@ -58,14 +74,14 @@ const MidNavBar = ({ appName, url, user }) => {
             />
           </div>
           {user && (
-            <Link>
+            <Link href={"/cart"}>
               <div className="relative mr-3">
                 <div className="flex items-center justify-center p-2">
-                <ShoppingCartIcon className="h-6 w-6" />
-              </div>
-              <span className="top-[-1px] left-[17px] absolute p-1 text-[10px] leading-none text-center align-middle bg-red-500 rounded-full">
-                99+
-              </span>
+                  <ShoppingCartIcon className="h-6 w-6" />
+                </div>
+                <span className="top-[-1px] left-[17px] absolute p-1 text-[10px] leading-none text-center align-middle bg-red-500 rounded-full">
+                  99+
+                </span>
               </div>
             </Link>
           )}

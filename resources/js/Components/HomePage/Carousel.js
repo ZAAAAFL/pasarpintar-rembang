@@ -3,7 +3,7 @@ import React from "react";
 const Carousel = () => {
   return (
     <div className="container">
-      <div className="grid grid-cols-1 lg:grid-cols-6 lg:grid-rows-6 gap-1 max-w-5xl mx-auto">
+      <div className="grid grid-cols-1 lg:grid-cols-6 lg:grid-rows-6 gap-1 max-w-screen-xl mx-auto">
         <div
           id="animation-carousel"
           className="relative col-span-1 lg:col-span-4 lg:row-span-6"
