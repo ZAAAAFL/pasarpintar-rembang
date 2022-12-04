@@ -6,7 +6,6 @@ const Admin = (props) => {
   return (
     <>
       <Head title={props.title} />
-
       <div className="h-screen"></div>
     </>
   );
