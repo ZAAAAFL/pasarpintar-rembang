@@ -58,9 +58,7 @@ const Sidebar = () => {
           ))}
         </ul>
       </div>
-      <div className="h-screen flex-1 p-7">
-        <Main />
-      </div>
+      <div className="h-screen flex-1 p-7">Dashboard</div>
     </div>
   );
 };
