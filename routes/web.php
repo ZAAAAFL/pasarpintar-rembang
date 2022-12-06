@@ -35,4 +35,8 @@ Route::get('/kurir', function () {
   return Inertia::render('Kurir');
 })->name('kurir.index');
 
+Route::get('/kurir/profile', function () {
+  return Inertia::render('ProfilKurir');
+})->name('profilKurir');
+
 require __DIR__ . '/auth.php';
