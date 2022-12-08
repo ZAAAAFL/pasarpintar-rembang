@@ -6,13 +6,13 @@ const ProdukPromo = () => {
   return (
     <div className="container">
       <div className="bg-white border-2 border-sky-900 rounded-lg overflow-hidden">
-        <div className="flex flex-wrap border-b-2 border-slate-600 -mb-px text-sm font-medium text-center text-slate-700">
-          <div className="inline-flex p-3 rounded-t-lg active group">
+        <div className="flex flex-wrap border-b-2 border-slate-600 -mb-px px-4 text-sm font-medium text-center text-slate-700">
+          <div className="inline-flex items-center p-3 rounded-t-lg">
             <FireIcon
               className="mr-2 w-5 h-5 text-red-500"
               aria-hidden="true"
             />
-            <h2 className="text-slate-700 font-medium text-base">Promo</h2>
+            <h2 className="text-slate-700 font-medium text-lg">Promo</h2>
           </div>
         </div>
         <div className="relative p-2 overflow-auto">
