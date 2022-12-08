@@ -1,18 +1,14 @@
 import Main from "@/Components/AdminTemplate/Main";
+import NavLink from "@/Components/NavLink";
 import { useState } from "react";
-const Sidebar = () => {
+const Sidebar = ({ children }) => {
   const [open, setOpen] = useState(true);
   const Menus = [
-    { title: "Dashboard", src: "Chart_fill" },
-    { title: "Inbox", src: "Chat" },
-    { title: "Accounts", src: "User", gap: true },
-    { title: "Schedule ", src: "Calendar" },
-    { title: "Search", src: "Search" },
-    { title: "Analytics", src: "Chart" },
-    { title: "Files ", src: "Folder", gap: true },
-    { title: "Setting", src: "Setting" },
+    { title: "Dashboard", src: "Chart_fill", link: "/admin-page" },
+    { title: "Toko", src: "Chat", link: "/toko" },
+    { title: "Kategori ", src: "Calendar", link: "/kategori" },
+    { title: "Pengaturan", src: "Setting", link: "/pengaturan" },
   ];
-
   return (
     <div className="flex">
       <div
@@ -52,13 +48,18 @@ const Sidebar = () => {
             >
               <img src={`./img/${Menu.src}.png`} />
               <span className={`${!open && "hidden"} origin-left duration-200`}>
-                {Menu.title}
+                <NavLink
+                  to={Menu.link}
+                  style={({ isActive }) => (isActive ? activeStyle : undefined)}
+                >
+                  {Menu.title}
+                </NavLink>
               </span>
             </li>
           ))}
         </ul>
       </div>
-      <div className="h-screen flex-1 p-7">Dashboard</div>
+      <div className="h-screen flex-1 p-7">{children}</div>
     </div>
   );
 };
