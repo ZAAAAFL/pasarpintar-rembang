@@ -6,7 +6,7 @@ const ProdukLaris = () => {
     <div className="container">
       <div className="bg-sky-900 border-2 border-sky-900 rounded-lg overflow-hidden">
         <div className="relative flex justify-start align-baseline px-4 bg-sky-400">
-          <h2 className="mt-3 pt-2 px-4 rounded-t-md bg-sky-900 text-base text-white">
+          <h2 className="mt-3 pt-2 px-4 rounded-t-md bg-sky-900 text-lg text-white">
             Produk Terlaris
           </h2>
         </div>

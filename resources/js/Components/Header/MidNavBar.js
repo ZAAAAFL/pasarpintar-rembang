@@ -1,9 +1,14 @@
-import { ChevronLeftIcon, ShoppingCartIcon } from "@heroicons/react/20/solid";
+import {
+  ArrowSmallLeftIcon,
+  ShoppingCartIcon,
+} from "@heroicons/react/20/solid";
 import { Inertia } from "@inertiajs/inertia";
 import { Link } from "@inertiajs/inertia-react";
 
 const MidNavBar = ({ appName, currentUrl, props, user }) => {
   let urlPrev = props.urlPrev;
+  console.log("urlPrev: ", urlPrev);
+  console.log("currentUrl: ", currentUrl);
 
   const back = () => {
     if (urlPrev !== "empty") {
@@ -15,8 +20,11 @@ const MidNavBar = ({ appName, currentUrl, props, user }) => {
     <nav className="px-3.5 py-2 bg-sky-400 text-white">
       <div className="container flex flex-wrap items-center justify-between">
         <div className="flex items-center justify-center">
-          {currentUrl !== "/" ? (
-            <ChevronLeftIcon className="w-6 h-6 mr-2" onClick={back} />
+          {currentUrl !== "/" && urlPrev !== "empty" ? (
+            <ArrowSmallLeftIcon
+              className="w-6 h-6 mr-2 cursor-pointer"
+              onClick={back}
+            />
           ) : (
             <></>
           )}

@@ -15,6 +15,7 @@ class CreateKurirsTable extends Migration
   {
     Schema::create('kurirs', function (Blueprint $table) {
       $table->id();
+      $table->foreignId('idUser');
       $table->string('namaKurir');
       $table->string('email')->unique();
       $table->string('password');
