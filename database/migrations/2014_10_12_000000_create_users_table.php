@@ -23,6 +23,7 @@ class CreateUsersTable extends Migration
       $table->string('alamat');
       $table->string('level', 8)->default('customer');
       $table->foreignId('idToko')->nullable();
+      $table->string('statusKurir')->nullable();
       $table->rememberToken();
       $table->timestamps();
     });
