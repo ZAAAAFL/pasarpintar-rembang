@@ -14,10 +14,17 @@ class HomeController extends Controller
     ]);
   }
 
-  public function produk($title)
+  public function produk($namaProduk)
   {
     return Inertia::render('Produk', [
-      "title" => $title,
+      "namaProduk" => $namaProduk,
+    ]);
+  }
+
+  public function toko($namaToko)
+  {
+    return Inertia::render('Toko', [
+      "namaToko" => $namaToko,
     ]);
   }
 

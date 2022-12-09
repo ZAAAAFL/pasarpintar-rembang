@@ -21,14 +21,17 @@ const MidNavBar = ({ appName, currentUrl, props, user }) => {
       <div className="container flex flex-wrap items-center justify-between">
         <div className="flex items-center justify-center">
           {currentUrl !== "/" && urlPrev !== "empty" ? (
-            <ArrowSmallLeftIcon
-              className="w-6 h-6 mr-2 cursor-pointer"
-              onClick={back}
-            />
+            <Link preserveScroll href="/">
+              <ArrowSmallLeftIcon className="w-6 h-6 mr-2 cursor-pointer" />
+            </Link>
           ) : (
             <></>
           )}
-          <Link href={route("index")} className="items-center ml-2">
+          <Link
+            href={route("index")}
+            preserveScroll
+            className="items-center ml-2"
+          >
             <span className="self-center text-lg sm:text-2xl font-semibold">
               <span className="mr-1.5">{appName}</span>
             </span>
