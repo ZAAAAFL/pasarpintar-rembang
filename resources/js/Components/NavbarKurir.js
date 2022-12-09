@@ -1,10 +1,11 @@
 import { Menu, Transition } from "@headlessui/react";
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
 import { Link, usePage } from "@inertiajs/inertia-react";
-import { Fragment } from "react";
+import { Fragment, useState } from "react";
 
 const NavbarKurir = ({ user }) => {
   console.log(user);
+
   return (
     <>
 
@@ -58,7 +59,7 @@ const NavbarKurir = ({ user }) => {
                     <div className="py-1">
                       <Menu.Item>
                         <Link
-                          href="/kurir/profile"
+                          href={`kurir/profile/${user.user.id}`}
                           className="block w-full px-4 py-2 text-sm text-left text-slate-700 hover:bg-slate-100"
                           as="button"
                         >

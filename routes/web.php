@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProdukController;
+use App\Http\Controllers\KurirController;
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\KeranjangController;
@@ -35,8 +36,10 @@ Route::get('/kurir', function () {
   return Inertia::render('Kurir');
 })->name('kurir.index');
 
-Route::get('/kurir/profile', function () {
-  return Inertia::render('ProfilKurir');
-})->name('profilKurir');
+Route::get('/kurir/profile/{id}', [KurirController::class, 'edit'])->name('editKurir');
+
+// Route::get('/kurir/profile', function () {
+//   return Inertia::render('ProfilKurir');
+// })->name('profilKurir');
 
 require __DIR__ . '/auth.php';

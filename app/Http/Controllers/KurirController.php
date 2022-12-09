@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Kurir;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Inertia\Inertia;
 
 class KurirController extends Controller
 {
@@ -77,9 +79,14 @@ class KurirController extends Controller
    * @param  \App\Models\Kurir  $kurir
    * @return \Illuminate\Http\Response
    */
-  public function edit(Kurir $kurir, Request $request)
+  public function edit(Kurir $kurir, $id)
   {
-    $kurir = Kurir::find($request->id);
+    $auth = auth()->user()->id;
+    $kurir = User::find($id);
+    return Inertia::render('ProfilKurir', [
+      'title' => 'Profil',
+      'kurir' => $kurir,
+    ]);
     //
   }
 
