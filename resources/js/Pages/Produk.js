@@ -8,7 +8,7 @@ const Produk = (props) => {
   return (
     <>
       <Head title={props.namaProduk} />
-      <section className="overflow-hidden bg-white py-4 my-4">
+      <section className="overflow-hidden bg-white py-4 my-8">
         <div className="container">
           <div className="flex flex-wrap">
             <ProdukImage />

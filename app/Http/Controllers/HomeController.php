@@ -14,9 +14,10 @@ class HomeController extends Controller
     ]);
   }
 
-  public function produk($namaProduk)
+  public function produk($namaToko, $namaProduk)
   {
     return Inertia::render('Produk', [
+      "namaToko" => $namaToko,
       "namaProduk" => $namaProduk,
     ]);
   }
@@ -24,7 +25,9 @@ class HomeController extends Controller
   public function toko($namaToko)
   {
     return Inertia::render('Toko', [
-      "namaToko" => $namaToko,
+      "toko" => [
+        "namaToko" => $namaToko,
+      ]
     ]);
   }
 

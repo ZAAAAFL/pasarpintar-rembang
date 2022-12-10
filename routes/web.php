@@ -20,9 +20,9 @@ use Inertia\Inertia;
 
 Route::get('/', [HomeController::class, 'index'])->name('index');
 
-Route::get('/produk/{namaProduk}', [HomeController::class, 'produk'])->name('produk.detail');
+Route::get('/{namaToko}/{namaProduk}', [HomeController::class, 'produk'])->name('toko.produk');
 
-Route::get('/toko/{namaToko}', [HomeController::class, 'toko'])->name('toko');
+Route::get('/{namaToko}', [HomeController::class, 'toko'])->name('toko');
 
 Route::middleware('auth',)->group(function () {
   Route::get('/user/profile', function () {

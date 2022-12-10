@@ -1,21 +1,24 @@
-import TokoCarousel from "@/Components/Toko/TokoCarousel";
 import TokoMainBar from "@/Components/Toko/TokoMainBar";
-import TokoProdukAcak from "@/Components/Toko/TokoProdukAcak";
+import TokoProdukSemua from "@/Components/Toko/TokoProdukSemua";
 import TokoProdukLaris from "@/Components/Toko/TokoProdukLaris";
 import TokoProdukPromo from "@/Components/Toko/TokoProdukPromo";
 import Main from "@/Layouts/Main";
 import { Head } from "@inertiajs/inertia-react";
 import React from "react";
 
-const Toko = (props) => {
+const Toko = ({ toko }) => {
+  console.log(toko);
   return (
     <>
-    <Head title={props.namaToko} />
-      <TokoMainBar />
-      <TokoCarousel />
-      <TokoProdukPromo />
-      <TokoProdukLaris />
-      <TokoProdukAcak />
+      <Head title={toko.namaToko} />
+      <section className="overflow-hidden bg-white py-4 my-8">
+        <div className="container space-y-3">
+          <TokoMainBar toko={toko} />
+          {/* <TokoProdukPromo /> */}
+          <TokoProdukLaris />
+          <TokoProdukSemua />
+        </div>
+      </section>
     </>
   );
 };
