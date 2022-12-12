@@ -7,7 +7,7 @@ import { AiOutlineUser, AiOutlineHeart } from "react-icons/ai";
 import { FiMessageSquare, FiFolder, FiShoppingCart } from "react-icons/fi";
 import { Link } from "react-router-dom";
 
-const Main = ([children]) => {
+function Main(props) {
   const menus = [
     { name: "dashboard", link: "/", icon: MdOutlineDashboard },
     { name: "user", link: "/", icon: AiOutlineUser },
@@ -64,9 +64,13 @@ const Main = ([children]) => {
           ))}
         </div>
       </div>
-      <div className="m-3 text-xl text-gray-900 font-semibold">{children}</div>
+      <div>
+        {React.Children.map(props.children, (child) => (
+          <div>{child}</div>
+        ))}
+      </div>
     </section>
   );
-};
+}
 
 export default Main;

@@ -20,21 +20,20 @@ use Inertia\Inertia;
 
 Route::get('/', [HomeController::class, 'index'])->name('index');
 
-Route::get('/{namaToko}/{namaProduk}', [HomeController::class, 'produk'])->name('toko.produk');
+// Route::get('/{namaToko}/{namaProduk}', [HomeController::class, 'produk'])->name('toko.produk');
 
-Route::get('/{namaToko}', [HomeController::class, 'toko'])->name('toko');
+// Route::get('/{namaToko}', [HomeController::class, 'toko'])->name('toko');
 
-Route::middleware('auth',)->group(function () {
-  Route::get('/user/profile', function () {
-    return Inertia::render('Dashboard');
-  })->name('dashboard');
+// Route::middleware('auth',)->group(function () {
+//   Route::get('/user/profile', function () {
+//     return Inertia::render('Dashboard');
+//   })->name('dashboard');
 
-  Route::get('/cart', [KeranjangController::class, 'index'])->name('cart.index');
+//   Route::get('/cart', [KeranjangController::class, 'index'])->name('cart.index');
 
-  Route::get('/checkout', [HomeController::class, 'checkout'])->name('checkout');
-
-  Route::get('/admin-page', [AdminController::class, 'index'])->name('admin.index');
-});
+//   Route::get('/checkout', [HomeController::class, 'checkout'])->name('checkout');
+// });
+Route::get('/admin-page', [AdminController::class, 'index'])->name('admin.index');
 
 Route::get('/kurir', function () {
   return Inertia::render('Kurir');
