@@ -46,4 +46,8 @@ Route::middleware('auth',)->group(function () {
 //   return Inertia::render('ProfilKurir');
 // })->name('profilKurir');
 
+Route::get('/kurir/profile', function () {
+  return Inertia::render('ProfilKurir');
+})->name('kurir.profil');
+
 require __DIR__ . '/auth.php';

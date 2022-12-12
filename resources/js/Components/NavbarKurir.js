@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { Menu, Transition } from "@headlessui/react";
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
 import { Link, usePage } from "@inertiajs/inertia-react";
@@ -6,6 +7,16 @@ import { Fragment, useState } from "react";
 const NavbarKurir = ({ user }) => {
   console.log(user);
 
+=======
+import Kurir from "@/Pages/Kurir";
+import { Menu, Transition } from "@headlessui/react";
+import { ChevronDownIcon } from "@heroicons/react/20/solid";
+import { Link, usePage } from "@inertiajs/inertia-react";
+import { Fragment } from "react";
+
+const NavbarKurir = ({ user }) => {
+  console.log(user);
+>>>>>>> 8dd7a7f (/)
   return (
     <>
 
@@ -17,18 +28,31 @@ const NavbarKurir = ({ user }) => {
           <div className="flex md:order-2">
             {/* <button type="button" className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-3 md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Login</button> */}
 
+<<<<<<< HEAD
             {user.user !== null ? (
               <Menu as="div" className="relative inline-block">
                 <Menu.Button
                   type="button"
                   className="inline-flex w-full justify-center rounded-md bg-transparent py-1 text-sm font-medium text-white hover:text-slate-700 hover:bg-slate-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75"
+=======
+            {user !== null ? (
+              <Menu as="div" className="relative inline-block">
+                <Menu.Button
+                  type="button"
+                  className="inline-flex w-full justify-center rounded-md bg-transparent py-1 text-sm font-medium text-white hover:bg-slate-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75"
+>>>>>>> 8dd7a7f (/)
                 >
                   <ChevronDownIcon
                     className="mr-2 -ml-1 h-5 w-5 text-white hover:text-gray-700"
                     aria-hidden="true"
                   />
+<<<<<<< HEAD
                   <span className="font-medium text-white hover:text-slate-700 truncate">
                     {user.user.name
+=======
+                  <span className="font-medium text-white hover:text-gray-700 truncate">
+                    {user.name
+>>>>>>> 8dd7a7f (/)
                       .split(" ")
                       .map((n) => n[0])
                       .join("")}
@@ -47,19 +71,31 @@ const NavbarKurir = ({ user }) => {
                     <div className="px-4 py-3">
                       <Menu.Item>
                         <span className="block text-sm text-slate-900 truncate">
+<<<<<<< HEAD
                           {user.user.name}
+=======
+                          {user.name}
+>>>>>>> 8dd7a7f (/)
                         </span>
                       </Menu.Item>
                       <Menu.Item>
                         <span className="block text-sm text-slate-900 truncate">
+<<<<<<< HEAD
                           {user.user.email}
+=======
+                          {user.email}
+>>>>>>> 8dd7a7f (/)
                         </span>
                       </Menu.Item>
                     </div>
                     <div className="py-1">
                       <Menu.Item>
                         <Link
+<<<<<<< HEAD
                           href={`kurir/profile/${user.user.id}`}
+=======
+                          href="#"
+>>>>>>> 8dd7a7f (/)
                           className="block w-full px-4 py-2 text-sm text-left text-slate-700 hover:bg-slate-100"
                           as="button"
                         >
