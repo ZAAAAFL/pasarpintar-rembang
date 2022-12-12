@@ -12,9 +12,9 @@ export default function ProfilKurir(props) {
 
   return (
     <>
-      <NavbarKurir user={props.auth} />
+      <NavbarKurir props={props} />
 
-      <form className="m-5">
+      <form className="m-12">
         <div className="md:grid-cols-2 grid gap-6">
           <div className="mb-3">
             <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nama Lengkap</label>
