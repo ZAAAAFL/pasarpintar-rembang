@@ -7,8 +7,8 @@ import { Link } from "@inertiajs/inertia-react";
 
 const MidNavBar = ({ appName, currentUrl, props, user }) => {
   let urlPrev = props.urlPrev;
-  console.log("urlPrev: ", urlPrev);
-  console.log("currentUrl: ", currentUrl);
+  // console.log("urlPrev: ", urlPrev);
+  // console.log("currentUrl: ", currentUrl);
 
   const back = () => {
     if (urlPrev !== "empty") {
@@ -28,7 +28,11 @@ const MidNavBar = ({ appName, currentUrl, props, user }) => {
           ) : (
             <></>
           )}
-          <Link href={route("index")} className="items-center ml-2">
+          <Link
+            href={route("index")}
+            preserveScroll
+            className="items-center ml-2"
+          >
             <span className="self-center text-lg sm:text-2xl font-semibold">
               <span className="mr-1.5">{appName}</span>
             </span>

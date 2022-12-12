@@ -2,9 +2,7 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\ProdukController;
 use App\Http\Controllers\KurirController;
-
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\KeranjangController;
 use Inertia\Inertia;
@@ -22,24 +20,34 @@ use Inertia\Inertia;
 
 Route::get('/', [HomeController::class, 'index'])->name('index');
 
-Route::get('/produk/{title}', [HomeController::class, 'produk'])->name('produk.detail');
+Route::get('/{namaToko}/{namaProduk}', [HomeController::class, 'produk'])->name('toko.produk');
 
-Route::get('/admin-page', [AdminController::class, 'index'])->name('admin.index');
+Route::get('/{namaToko}', [HomeController::class, 'toko'])->name('toko');
 
-Route::get('/user/profile', function () {
-  return Inertia::render('Dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+Route::middleware('auth',)->group(function () {
+  Route::get('/user/profile', function () {
+    return Inertia::render('Dashboard');
+  })->name('dashboard');
 
-Route::get('/cart', [KeranjangController::class, 'index'])->name('cart.index');
+  Route::get('/cart', [KeranjangController::class, 'index'])->name('cart.index');
+
+  Route::get('/checkout', [HomeController::class, 'checkout'])->name('checkout');
+
+  Route::get('/admin-page', [AdminController::class, 'index'])->name('admin.index');
+});
 
 Route::get('/kurir', function () {
   return Inertia::render('Kurir');
 })->name('kurir.index');
 
-Route::get('/kurir/profile/{id}', [KurirController::class, 'edit'])->name('editKurir');
+Route::get('/kurir/profile/{id}', [KurirController::class, 'edit'])->name('kurir.edit');
 
 // Route::get('/kurir/profile', function () {
 //   return Inertia::render('ProfilKurir');
 // })->name('profilKurir');
+
+Route::get('/kurir/profile', function () {
+  return Inertia::render('ProfilKurir');
+})->name('kurir.profil');
 
 require __DIR__ . '/auth.php';

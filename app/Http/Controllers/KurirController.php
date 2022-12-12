@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Kurir;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
@@ -16,7 +15,7 @@ class KurirController extends Controller
    */
   public function index()
   {
-    $kurir = Kurir::paginate(10)->withQueryString();
+    $kurir = User::paginate(10)->withQueryString();
     //
   }
 
@@ -57,7 +56,7 @@ class KurirController extends Controller
       ]
     );
 
-    Kurir::create($request->all());
+    User::create($request->all());
     return back()->wiht('message', 'Kurir berhasil ditambah');
   }
 
@@ -67,9 +66,9 @@ class KurirController extends Controller
    * @param  \App\Models\Kurir  $kurir
    * @return \Illuminate\Http\Response
    */
-  public function show(Kurir $kurir, Request $request)
+  public function show(User $kurir, Request $request)
   {
-    $kurir = Kurir::find($request->id);
+    $kurir = User::find($request->id);
     //
   }
 
@@ -79,7 +78,7 @@ class KurirController extends Controller
    * @param  \App\Models\Kurir  $kurir
    * @return \Illuminate\Http\Response
    */
-  public function edit(Kurir $kurir, $id)
+  public function edit(User $kurir, $id)
   {
     $auth = auth()->user()->id;
     $kurir = User::find($id);
@@ -97,7 +96,7 @@ class KurirController extends Controller
    * @param  \App\Models\Kurir  $kurir
    * @return \Illuminate\Http\Response
    */
-  public function update(Request $request, Kurir $kurir)
+  public function update(Request $request)
   {
     $request->validate(
       [
@@ -117,7 +116,7 @@ class KurirController extends Controller
         'noHp.required' => 'No handphone harus diisi!',
       ]
     );
-    Kurir::where(['id', $request->id])->update($request->all());
+    User::where(['id', $request->id])->update($request->all());
     return back()->wiht('message', 'Kurir berhasil ditambah');
   }
 
@@ -127,9 +126,9 @@ class KurirController extends Controller
    * @param  \App\Models\Kurir  $kurir
    * @return \Illuminate\Http\Response
    */
-  public function destroy(Kurir $kurir, Request $request)
+  public function destroy(User $user, Request $request)
   {
-    $kurir = Kurir::find($request->id);
+    $kurir = User::find($request->id);
     $kurir->delete();
     return back()->with('message', 'Kurir berhasil dihapus');
   }

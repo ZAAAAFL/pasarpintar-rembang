@@ -9,6 +9,7 @@ export default function Kurir(props) {
   return (
     <>
       <Head title="Kurir" />
+
       <NavbarKurir user={props.auth} />
       <div className="m-5">
         <form>

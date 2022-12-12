@@ -19,7 +19,7 @@ const ProdukAcak = () => {
                 key={i}
                 className="w-full bg-white border-2 border-slate-600 rounded-md overflow-hidden"
               >
-                <Link href={`/produk/${i}`}>
+                <Link href={`/evoutdoor/sweater-${i}`}>
                   <img
                     className="bg-cover bg-center w-full p-2"
                     src="https://cf.shopee.co.id/file/88063c6dfd1dea9848c17b33205b71b8_tn"
@@ -29,6 +29,7 @@ const ProdukAcak = () => {
                     <h5 className="text-sm font-semibold tracking-tight text-slate-700 line-clamp-3">
                       Apple Watch Series wow keren banget cuy coba aja deh
                     </h5>
+                    <span className="text-lg font-bold">RP30.000</span>
                     <div className="flex items-center justify-between">
                       <span className="text-xs font-bold text-slate-900 pt-1">
                         1,49rb+ terjual
