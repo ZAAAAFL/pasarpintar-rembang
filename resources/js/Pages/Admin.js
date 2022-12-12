@@ -6,7 +6,7 @@ const Admin = (props) => {
   return (
     <>
       <Head title={props.title} />
-      {/* <h1>Hello World</h1> */}
+      <h1>Hello World</h1>
     </>
   );
 };
