@@ -34,13 +34,13 @@ Route::middleware('auth',)->group(function () {
   Route::get('/checkout', [HomeController::class, 'checkout'])->name('checkout');
 
   Route::get('/admin-page', [AdminController::class, 'index'])->name('admin.index');
-
-  Route::get('/kurir', function () {
-    return Inertia::render('Kurir');
-  })->name('kurir.index');
-
-  Route::get('/kurir/profile/{id}', [KurirController::class, 'edit'])->name('kurir.edit');
 });
+
+Route::get('/kurir', function () {
+  return Inertia::render('Kurir');
+})->name('kurir.index');
+
+Route::get('/kurir/profile/{id}', [KurirController::class, 'edit'])->name('kurir.edit');
 
 // Route::get('/kurir/profile', function () {
 //   return Inertia::render('ProfilKurir');
