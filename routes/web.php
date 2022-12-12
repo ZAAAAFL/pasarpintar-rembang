@@ -22,7 +22,7 @@ Route::get('/', [HomeController::class, 'index'])->name('index');
 
 Route::get('/{namaToko}/{namaProduk}', [HomeController::class, 'produk'])->name('toko.produk');
 
-Route::get('/{namaToko}', [HomeController::class, 'toko'])->name('toko');
+// Route::get('/{namaToko}', [HomeController::class, 'toko'])->name('toko');
 
 Route::middleware('auth',)->group(function () {
   Route::get('/user/profile', function () {
