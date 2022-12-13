@@ -7,47 +7,45 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\KeranjangController;
 use Inertia\Inertia;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-
+// home route
 Route::get('/', [HomeController::class, 'index'])->name('index');
 
-Route::get('/{namaToko}/{namaProduk}', [HomeController::class, 'produk'])->name('toko.produk');
-
-// Route::get('/{namaToko}', [HomeController::class, 'toko'])->name('toko');
-
 Route::middleware('auth',)->group(function () {
+
+  // route user
   Route::get('/user/profile', function () {
     return Inertia::render('Dashboard');
   })->name('dashboard');
 
+  // route admin
+  Route::get('/admin-page', [AdminController::class, 'index'])->name('admin.index');
+
+  // route keranjang
   Route::get('/cart', [KeranjangController::class, 'index'])->name('cart.index');
 
+  // route checkout
   Route::get('/checkout', [HomeController::class, 'checkout'])->name('checkout');
 
-  Route::get('/admin-page', [AdminController::class, 'index'])->name('admin.index');
+  // route kurir
+  Route::get('/kurir', function () {
+    return Inertia::render('Kurir');
+  })->name('kurir.index');
+
+  // route profil kurir
+  Route::get('/kurir/profile', function () {
+    return Inertia::render('ProfilKurir');
+  })->name('kurir.profil');
+
+  // route edit kurir
+  Route::get('/kurir/profile/{id}', [KurirController::class, 'edit'])->name('kurir.edit');
+
 });
 
-Route::get('/kurir', function () {
-  return Inertia::render('Kurir');
-})->name('kurir.index');
-
-Route::get('/kurir/profile/{id}', [KurirController::class, 'edit'])->name('kurir.edit');
-
-// Route::get('/kurir/profile', function () {
-//   return Inertia::render('ProfilKurir');
-// })->name('profilKurir');
-
-Route::get('/kurir/profile', function () {
-  return Inertia::render('ProfilKurir');
-})->name('kurir.profil');
-
+// route autentikasi
 require __DIR__ . '/auth.php';
+
+// route toko
+Route::get('/{toko:slug}', [HomeController::class, 'toko'])->name('toko');
+
+// route produk toko
+Route::get('/{namaToko}/{namaProduk}', [HomeController::class, 'produk'])->name('toko.produk');
