@@ -14,6 +14,7 @@ class CreateKurirsTable extends Migration
   public function up()
   {
     Schema::create('kurirs', function (Blueprint $table) {
+      $table->id();
       $table->foreignId('idUser');
       $table->foreignId('idToko')->nullable();
       $table->string('name');
