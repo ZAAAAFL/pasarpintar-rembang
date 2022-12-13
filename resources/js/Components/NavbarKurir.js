@@ -70,6 +70,13 @@ const NavbarKurir = ({ props }) => {
                         </Menu.Item>
                         <Menu.Item>
                           <Link
+                            href={`/kurir/profile/${props.auth.user.id}`}
+                            className="block w-full px-4 py-2 text-sm text-left text-slate-700 hover:bg-slate-100" as="button">
+                            Halaman Website
+                          </Link>
+                        </Menu.Item>
+                        <Menu.Item>
+                          <Link
                             href={route("logout")}
                             method="post"
                             className="block w-full px-4 py-2 text-sm text-left text-slate-700 hover:bg-slate-100"
