@@ -22,7 +22,7 @@ class CreateKurirsTable extends Migration
       // $table->timestamp('email_verified_at')->nullable();
       $table->string('password');
       $table->string('no_hp', 17);
-      $table->string('alamat');
+      $table->text('alamat');
       $table->string('statusKurir')->default('inactive');
       $table->timestamps();
     });
