@@ -31,14 +31,8 @@ Route::middleware('auth',)->group(function () {
     return Inertia::render('Kurir');
   })->name('kurir.index');
 
-  // route profil kurir
-  Route::get('/kurir/profile', function () {
-    return Inertia::render('ProfilKurir');
-  })->name('kurir.profil');
-
   // route edit kurir
   Route::get('/kurir/profile/{id}', [KurirController::class, 'edit'])->name('kurir.edit');
-
 });
 
 // route autentikasi
