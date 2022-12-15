@@ -23,17 +23,14 @@ Route::middleware('auth',)->group(function () {
   // route keranjang
   Route::get('/cart', [KeranjangController::class, 'index'])->name('cart.index');
 
-<<<<<<< HEAD
-//   Route::get('/checkout', [HomeController::class, 'checkout'])->name('checkout');
-// });
-Route::get('/admin-page', [AdminController::class, 'index'])->name('admin.index');
-Route::get('/admin-toko', [AdminController::class, 'toko'])->name('admin.toko');
-Route::get('/admin-kategori', [AdminController::class, 'kategori'])->name('admin.kategori');
-Route::get('/admin-setting', [AdminController::class, 'setting'])->name('admin.setting');
-=======
+
+  //   Route::get('/checkout', [HomeController::class, 'checkout'])->name('checkout');
+  // });
+
+
   // route checkout
   Route::get('/checkout', [HomeController::class, 'checkout'])->name('checkout');
->>>>>>> 5a2d8e6f12af080f51629c0fce875183b07fd8d7
+
 
   // route kurir
   Route::get('/kurir', function () {
@@ -43,6 +40,11 @@ Route::get('/admin-setting', [AdminController::class, 'setting'])->name('admin.s
   // route edit kurir
   Route::get('/kurir/profile/{id}', [KurirController::class, 'edit'])->name('kurir.edit');
 });
+
+Route::get('/admin-page', [AdminController::class, 'index'])->name('admin.index');
+Route::get('/admin-toko', [AdminController::class, 'toko'])->name('admin.toko');
+Route::get('/admin-kategori', [AdminController::class, 'kategori'])->name('admin.kategori');
+Route::get('/admin-setting', [AdminController::class, 'setting'])->name('admin.setting');
 
 // route autentikasi
 require __DIR__ . '/auth.php';
