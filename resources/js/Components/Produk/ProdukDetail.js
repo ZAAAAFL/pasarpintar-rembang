@@ -44,7 +44,6 @@ const ProdukDetail = () => {
             <div className="flex flex-col pr-3">
               <span className="text-slate-800 mb-2 ml-2">oktalia15</span>
               <Link
-                replace
                 as="button"
                 href={`/oktalia15`}
                 className="inline-flex flex-row items-center text-slate-700 px-2 py-1 border border-slate-400 rounded-md hover:border-slate-900 hover:text-slate-900"

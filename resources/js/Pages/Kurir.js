@@ -14,27 +14,27 @@ export default function Kurir(props) {
       <div className="m-5">
         <form>
           <div className="mb-4">
-            <label for="name" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nama pemesan</label>
+            <label htmlFor="name" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nama pemesan</label>
             <span className="font-bold">Ardianto Putra Pratomo</span>
             <hr></hr>
           </div>
           <div className="mb-4">
-            <label for="name" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">No handphone</label>
+            <label htmlFor="name" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">No handphone</label>
             <a href="tel:08888901970" className="font-bold">08888901970</a>
             <hr></hr>
           </div>
           <div className="mb-4">
-            <label for="password" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Alamat Pengiriman</label>
+            <label htmlFor="password" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Alamat Pengiriman</label>
             <span className="font-bold">Selabaya</span>
             <hr></hr>
           </div>
           <div className="mb-4">
-            <label for="password" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Metode Pembayaran</label>
+            <label htmlFor="password" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Metode Pembayaran</label>
             <span className="font-bold">Cash</span>
             <hr></hr>
           </div>
           <div className="mb-4">
-            <label for="password" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Data pesanan</label>
+            <label htmlFor="password" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Data pesanan</label>
             <div className="overflow-x-auto relative">
               <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
                 <thead className="text-xs text-gray-700 uppercase bg-gray-100 dark:bg-gray-700 dark:text-gray-400">
@@ -74,7 +74,7 @@ export default function Kurir(props) {
             </div>
           </div>
           <div className="mb-4 w-full">
-            <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="file_input">Upload bukti sampai</label>
+            <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white" htmlFor="file_input">Upload bukti sampai</label>
             <Input className="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400" aria-describedby="file_input_help" id="file_input" type="file" required />
             <p className="mt-1 text-sm text-gray-500 dark:text-gray-300" id="file_input_help">SVG, PNG, JPG or GIF (MAX. 2048px / 2mb).</p>
           </div>

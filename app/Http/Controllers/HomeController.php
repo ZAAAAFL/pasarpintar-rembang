@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Toko;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 
@@ -22,12 +23,13 @@ class HomeController extends Controller
     ]);
   }
 
-  public function toko($namaToko)
+  public function toko(Toko $toko)
   {
+
+    dd($toko);
+
     return Inertia::render('Toko', [
-      "toko" => [
-        "namaToko" => $namaToko,
-      ]
+      "toko" => []
     ]);
   }
 

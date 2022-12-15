@@ -1,9 +1,9 @@
 /node_modules
 /public/hot
 /public/storage
-public/css/app.css
-public/js/flowbite.js
-public/js/app.js
+/public/css/app.css
+/public/js/flowbite.js
+/public/js/app.js
 /storage/*.key
 /vendor
 .env

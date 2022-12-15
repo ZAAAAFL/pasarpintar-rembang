@@ -5,32 +5,24 @@ import {
 import { Inertia } from "@inertiajs/inertia";
 import { Link } from "@inertiajs/inertia-react";
 
-const MidNavBar = ({ appName, currentUrl, props, user }) => {
-  let urlPrev = props.urlPrev;
-  // console.log("urlPrev: ", urlPrev);
-  // console.log("currentUrl: ", currentUrl);
-
+const MidNavBar = ({ appName, currentUrl, user }) => {
   const back = () => {
-    if (urlPrev !== "empty") {
-      Inertia.visit(urlPrev);
-    }
+    window.history.back();
   };
 
   return (
     <nav className="px-3.5 py-2 bg-sky-400 text-white">
       <div className="container flex flex-wrap items-center justify-between">
         <div className="flex items-center justify-center">
-          {currentUrl !== "/" && urlPrev !== "empty" ? (
-            <ArrowSmallLeftIcon
-              className="w-6 h-6 mr-2 cursor-pointer"
-              onClick={back}
-            />
+          {currentUrl !== "/" ? (
+            <Link onClick={back} as="button">
+              <ArrowSmallLeftIcon className="w-6 h-6 mr-2 cursor-pointer" />
+            </Link>
           ) : (
             <></>
           )}
           <Link
             href={route("index")}
-            preserveScroll
             className="items-center ml-2"
           >
             <span className="self-center text-lg sm:text-2xl font-semibold">

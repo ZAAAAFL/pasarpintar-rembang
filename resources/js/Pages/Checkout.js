@@ -6,7 +6,7 @@ import Input from "@/Components/Input";
 
 const Checkout = (props) => {
   return (
-    <div className="space-y-3">
+    <div className="space-y-3 space-x-5">
       <Head title={props.title} />
 
       <div>
@@ -15,7 +15,7 @@ const Checkout = (props) => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 bg-white border-t-4 border-t-sky-600">
             <div className="ml-3">
               Nama pemesan: <br />
-              <span className="text-gray-900">Ardianto Putra Pratomo</span>
+              <span className="text-gray-900 mx-auto">Ardianto Putra Pratomo (+62 888-8901-970)</span>
             </div>
             <div className="ml-3">
               Alamat pengiriman: <br />
@@ -68,20 +68,20 @@ const Checkout = (props) => {
           </div>
         </div>
 
-        <div className="p-4 text-bold bg-white hover:bg-slate-100 text-black">
-          <div className="mb-2">
+        <div className="p-4 text-bold bg-white text-black grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="mb-2 mx-auto md:mx-0">
             <div>Metode bayar</div>
-            <select className="w-full">
+            <select className="rounded-md">
               <option>- Pilih metode pembayaran -</option>
               <option>Transfer</option>
               <option>Bayar ditempat</option>
             </select>
           </div>
-          <div>Total: Rp. 60.000</div>
+          <div className="md:text-end text-center">Total: Rp. 60.000</div>
         </div>
-        <div className="grid grid-cols-2 mx-auto mt-4">
-          <div className="mx-auto"><Link className="bg-blue-600 text-white p-2 rounded-md text-center">Batal</Link></div>
-          <div className="mx-auto"><Link className="bg-green-500 p-2 text-white rounded-md text-center">Pesan</Link></div>
+        <div className="mx-auto my-7 text-end mr-5">
+          <Link className="bg-blue-600 text-white p-2 rounded-md text-center">Batal</Link>
+          <Link className="bg-green-500 p-2 text-white rounded-md text-center">Pesan</Link>
         </div>
       </div>
     </div>
