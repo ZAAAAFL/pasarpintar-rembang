@@ -1,13 +1,11 @@
 import React from "react";
-import { Head } from "@inertiajs/inertia-react";
 import Main from "@/Components/AdminTemplate/Main";
 
-const Admin = (props) => {
+const Admin = () => {
   return (
-    <>
-      <Head title={props.title} />
-      <Main/>
-    </>
+    <div>
+      <h1 className="font-bold text-3xl">Dashboard Admin</h1>
+    </div>
   );
 };
 

@@ -34,6 +34,9 @@ Route::get('/', [HomeController::class, 'index'])->name('index');
 //   Route::get('/checkout', [HomeController::class, 'checkout'])->name('checkout');
 // });
 Route::get('/admin-page', [AdminController::class, 'index'])->name('admin.index');
+Route::get('/admin-toko', [AdminController::class, 'toko'])->name('admin.toko');
+Route::get('/admin-kategori', [AdminController::class, 'kategori'])->name('admin.kategori');
+Route::get('/admin-setting', [AdminController::class, 'setting'])->name('admin.setting');
 
 Route::get('/kurir', function () {
   return Inertia::render('Kurir');
