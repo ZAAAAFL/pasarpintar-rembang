@@ -46,6 +46,11 @@ Route::get('/admin-toko', [AdminController::class, 'toko'])->name('admin.toko');
 Route::get('/admin-kategori', [AdminController::class, 'kategori'])->name('admin.kategori');
 Route::get('/admin-setting', [AdminController::class, 'setting'])->name('admin.setting');
 
+Route::get('/toko-page', [AdminTokoController::class, 'index'])->name('toko.index');
+Route::get('/toko-list', [AdminTokoController::class, 'list'])->name('toko.list');
+Route::get('/toko-kategori', [AdminTokoController::class, 'kategori'])->name('toko.kategori');
+Route::get('/toko-setting', [AdminTokoController::class, 'setting'])->name('toko.setting');
+
 // route autentikasi
 require __DIR__ . '/auth.php';
 
