@@ -6,7 +6,7 @@ import React from "react";
 
 const TokoMainBar = ({ toko }) => {
   return (
-    <div className="flex flex-row justify-between items-center p-4 my-4 border border-sky-300 rounded-md">
+    <div className="flex flex-row items-center p-4 my-4 border border-sky-300 rounded-md">
       <div className="flex items-center flex-nowrap">
         <BuildingStorefrontIcon className="w-20 h-20 text-cyan-500" />
         <div className="pl-3 flex flex-col">
@@ -19,6 +19,12 @@ const TokoMainBar = ({ toko }) => {
               </div>
             </span>
           </button>
+        </div>
+      </div>
+      <div className="flex items-center ml-14">
+        <div className="flex flex-col">
+          <span className="">{`Nama Pengelola : ${toko.namaPengelola}`}</span>
+          <span className="">{`Alamat : ${toko.alamat}`}</span>
         </div>
       </div>
     </div>

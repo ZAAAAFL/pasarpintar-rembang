@@ -8,12 +8,13 @@ import ProdukPromo from "@/Components/HomePage/ProdukPromo";
 import ProdukAcak from "@/Components/HomePage/ProdukAcak";
 
 const HomePage = (props) => {
+  // console.log(props);
   return (
     <div className="space-y-3">
       <Head title={props.title} />
-      <Carousel/>
+      <Carousel />
       <Kategori />
-      <ProdukLaris />
+      <ProdukLaris produk={props.produk.produkTerlaris} />
       <ProdukPromo />
       <ProdukAcak />
     </div>

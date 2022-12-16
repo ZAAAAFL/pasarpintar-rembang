@@ -17,9 +17,9 @@ class CreateTokosTable extends Migration
       $table->id();
       $table->foreignId('idUser');
       $table->string('namaToko');
+      $table->string('slug')->unique();
       $table->string('email')->unique();
       $table->string('password');
-      $table->string('slug');
       $table->string('namaPengelola');
       $table->string('noHp');
       $table->text('alamat');
