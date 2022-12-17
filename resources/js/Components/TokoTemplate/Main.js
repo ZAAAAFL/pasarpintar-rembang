@@ -15,7 +15,7 @@ const Main = (props) => {
       <div
         className={` ${
           open ? "w-72" : "w-20 "
-        } bg-sky-600 h-screen p-5  pt-8 relative duration-300`}
+        } bg-gradient-to-t from-sky-500 via-blue-500 to-cyan-500 h-screen p-5  pt-8 relative duration-300`}
       >
         <img
           src="/img/control.png"
@@ -31,7 +31,7 @@ const Main = (props) => {
             }`}
           />
           <h1
-            className={`text-white origin-left font-medium text-xl duration-200 ${
+            className={`text-black origin-left font-bold text-xl duration-200 ${
               !open && "scale-0"
             }`}
           >
@@ -43,8 +43,12 @@ const Main = (props) => {
             <li
               className={`flex  rounded-md p-2 cursor-pointer hover:bg-light-white text-gray-300 text-sm items-center gap-x-4`}
             >
-              <ComputerDesktopIcon className="h-6 w-6" />
-              <span className={`${!open && "hidden"} origin-left duration-200`}>
+              <ComputerDesktopIcon className="h-6 w-6 text-black" />
+              <span
+                className={`${
+                  !open && "hidden"
+                } origin-left text-black font-semibold duration-200`}
+              >
                 Dashboard
               </span>
             </li>
@@ -53,8 +57,12 @@ const Main = (props) => {
             <li
               className={`flex  rounded-md p-2 cursor-pointer hover:bg-light-white text-gray-300 text-sm items-center gap-x-4`}
             >
-              <BuildingStorefrontIcon className="h-6 w-6" />
-              <span className={`${!open && "hidden"} origin-left duration-200`}>
+              <BuildingStorefrontIcon className="h-6 w-6 text-black" />
+              <span
+                className={`${
+                  !open && "hidden"
+                } origin-left text-black font-semibold duration-200`}
+              >
                 Toko
               </span>
             </li>
@@ -63,8 +71,12 @@ const Main = (props) => {
             <li
               className={`flex  rounded-md p-2 cursor-pointer hover:bg-light-white text-gray-300 text-sm items-center gap-x-4`}
             >
-              <ListBulletIcon className="h-6 w-6" />
-              <span className={`${!open && "hidden"} origin-left duration-200`}>
+              <ListBulletIcon className="h-6 w-6 text-black" />
+              <span
+                className={`${
+                  !open && "hidden"
+                } origin-left text-black font-semibold duration-200`}
+              >
                 Kategori
               </span>
             </li>
@@ -73,8 +85,12 @@ const Main = (props) => {
             <li
               className={`flex  rounded-md p-2 cursor-pointer hover:bg-light-white text-gray-300 text-sm items-center gap-x-4`}
             >
-              <Cog6ToothIcon className="h-6 w-6" />
-              <span className={`${!open && "hidden"} origin-left duration-200`}>
+              <Cog6ToothIcon className="h-6 w-6 text-black" />
+              <span
+                className={`${
+                  !open && "hidden"
+                } origin-left text-black font-semibold duration-200`}
+              >
                 Setting
               </span>
             </li>
