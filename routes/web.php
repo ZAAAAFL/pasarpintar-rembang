@@ -59,4 +59,4 @@ require __DIR__ . '/auth.php';
 Route::get('/{toko:slug}', [HomeController::class, 'toko'])->name('toko');
 
 // route produk toko
-Route::get('/{namaToko}/{namaProduk}', [HomeController::class, 'produk'])->name('toko.produk');
+Route::get('/{toko:slug}/{produks:slug}', [HomeController::class, 'produk'])->name('toko.produk')->scopeBindings();

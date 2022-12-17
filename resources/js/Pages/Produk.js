@@ -5,6 +5,7 @@ import ProdukImage from "@/Components/Produk/ProdukImage";
 import ProdukDetail from "@/Components/Produk/ProdukDetail";
 
 const Produk = (props) => {
+  console.log(props);
   return (
     <>
       <Head title={props.namaProduk} />

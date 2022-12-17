@@ -15,12 +15,13 @@ class CreateProduksTable extends Migration
   {
     Schema::create('produks', function (Blueprint $table) {
       $table->id();
-      $table->string('namaProduk')->nullable();
-      $table->string('slug')->nullable()->unique();
+      $table->string('namaProduk');
+      $table->string('slug')->unique();
+      $table->foreignId('idToko');
       $table->foreignId('idKategori')->nullable();
       $table->foreignId('idKategoriGlobal')->nullable();
       $table->foreignId('idSatuan')->nullable();
-      $table->string('deskripsi')->nullable();
+      $table->text('deskripsi')->nullable();
       $table->bigInteger('hrgBeli')->nullable();
       $table->bigInteger('hrgJual')->nullable();
       $table->bigInteger('stokToko')->nullable();
@@ -31,7 +32,6 @@ class CreateProduksTable extends Migration
       $table->date('tglAkhirDiskon')->nullable();
       $table->string('imgName')->nullable();
       $table->string('imgUrl')->nullable();
-      $table->foreignId('idToko')->nullable();
       $table->timestamps();
     });
   }

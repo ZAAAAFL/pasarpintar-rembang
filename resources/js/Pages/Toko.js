@@ -7,7 +7,7 @@ import { Head } from "@inertiajs/inertia-react";
 import React from "react";
 
 const Toko = ({ toko }) => {
-  console.log(toko);
+  // console.log(toko);
   return (
     <>
       <Head title={toko.namaToko} />
