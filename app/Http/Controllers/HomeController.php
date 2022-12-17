@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Produk;
 use App\Models\Toko;
-use Illuminate\Http\Request;
+use Carbon\Carbon;
 use Inertia\Inertia;
 
 class HomeController extends Controller
@@ -23,9 +23,29 @@ class HomeController extends Controller
 
   public function produk(Toko $toko, Produk $produk)
   {
+    $lamaBergabung = "";
+    if ($produk->created_at->diffInYears(Carbon::now()) < 1) {
+      $lamaBergabung = $produk->created_at->format('d F');
+    } else {
+      $lamaBergabung = $produk->created_at->diffInYears(Carbon::now()) . "tahun yang lalu";
+    }
 
     return Inertia::render('Produk', [
-      "namaProduk" => $produk,
+      "toko" => [
+        "namaToko" => $toko->namaToko,
+        "slug" => $toko->slug,
+        "jumlahProduk" => $produk->where("idToko", $toko->id)->count(),
+        "lamaBergabung" => $lamaBergabung,
+      ],
+      "produk" => [
+        "namaProduk" => $produk->namaProduk,
+        "slug" => $produk->slug,
+        "terjual" => $produk->terjual,
+        "deskripsi" => $produk->deskripsi,
+        "diskon" => $produk->diskon,
+        "hrgJual" => $produk->hrgJual,
+        "stok" => $produk->stokToko,
+      ],
     ]);
   }
 
