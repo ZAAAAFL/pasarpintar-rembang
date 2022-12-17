@@ -1,4 +1,5 @@
 import {
+  ArrowLeftOnRectangleIcon,
   BuildingStorefrontIcon,
   Cog6ToothIcon,
   ComputerDesktopIcon,
@@ -76,6 +77,16 @@ const Main = (props) => {
               <Cog6ToothIcon className="h-6 w-6" />
               <span className={`${!open && "hidden"} origin-left duration-200`}>
                 Setting
+              </span>
+            </li>
+          </Link>
+          <Link href="/admin-setting">
+            <li
+              className={`flex  rounded-md p-2 cursor-pointer hover:bg-light-white text-gray-300 text-sm items-center gap-x-4`}
+            >
+              <ArrowLeftOnRectangleIcon className="h-6 w-6" />
+              <span className={`${!open && "hidden"} origin-left duration-200`}>
+                Keluar
               </span>
             </li>
           </Link>

@@ -1,4 +1,5 @@
 import {
+  ArrowLeftOnRectangleIcon,
   BuildingStorefrontIcon,
   Cog6ToothIcon,
   ComputerDesktopIcon,
@@ -31,11 +32,11 @@ const Main = (props) => {
             }`}
           />
           <h1
-            className={`text-black origin-left font-bold text-xl duration-200 ${
+            className={`text-white origin-left font-bold text-xl duration-200 ${
               !open && "scale-0"
             }`}
           >
-            Admin Toko PasarPintar
+            Toko Admin
           </h1>
         </div>
         <ul className="pt-6">
@@ -43,11 +44,11 @@ const Main = (props) => {
             <li
               className={`flex  rounded-md p-2 cursor-pointer hover:bg-light-white text-gray-300 text-sm items-center gap-x-4`}
             >
-              <ComputerDesktopIcon className="h-6 w-6 text-black" />
+              <ComputerDesktopIcon className="h-6 w-6 text-white" />
               <span
                 className={`${
                   !open && "hidden"
-                } origin-left text-black font-semibold duration-200`}
+                } origin-left text-white font-semibold duration-200`}
               >
                 Dashboard
               </span>
@@ -57,11 +58,11 @@ const Main = (props) => {
             <li
               className={`flex  rounded-md p-2 cursor-pointer hover:bg-light-white text-gray-300 text-sm items-center gap-x-4`}
             >
-              <BuildingStorefrontIcon className="h-6 w-6 text-black" />
+              <BuildingStorefrontIcon className="h-6 w-6 text-white" />
               <span
                 className={`${
                   !open && "hidden"
-                } origin-left text-black font-semibold duration-200`}
+                } origin-left text-white font-semibold duration-200`}
               >
                 Toko
               </span>
@@ -71,11 +72,11 @@ const Main = (props) => {
             <li
               className={`flex  rounded-md p-2 cursor-pointer hover:bg-light-white text-gray-300 text-sm items-center gap-x-4`}
             >
-              <ListBulletIcon className="h-6 w-6 text-black" />
+              <ListBulletIcon className="h-6 w-6 text-white" />
               <span
                 className={`${
                   !open && "hidden"
-                } origin-left text-black font-semibold duration-200`}
+                } origin-left text-white font-semibold duration-200`}
               >
                 Kategori
               </span>
@@ -85,13 +86,27 @@ const Main = (props) => {
             <li
               className={`flex  rounded-md p-2 cursor-pointer hover:bg-light-white text-gray-300 text-sm items-center gap-x-4`}
             >
-              <Cog6ToothIcon className="h-6 w-6 text-black" />
+              <Cog6ToothIcon className="h-6 w-6 text-white" />
               <span
                 className={`${
                   !open && "hidden"
-                } origin-left text-black font-semibold duration-200`}
+                } origin-left text-white font-semibold duration-200`}
               >
                 Setting
+              </span>
+            </li>
+          </Link>
+          <Link href="/logout">
+            <li
+              className={`flex  rounded-md p-2 cursor-pointer hover:bg-light-white text-gray-300 text-sm items-center gap-x-4`}
+            >
+              <ArrowLeftOnRectangleIcon className="h-6 w-6 text-white" />
+              <span
+                className={`${
+                  !open && "hidden"
+                } origin-left text-white font-semibold duration-200`}
+              >
+                Keluar
               </span>
             </li>
           </Link>
