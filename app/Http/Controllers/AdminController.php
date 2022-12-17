@@ -15,7 +15,7 @@ class AdminController extends Controller
   }
   public function toko()
   {
-    return Inertia::render('AdminToko', [
+    return Inertia::render('AdminToko/AdminToko', [
       "title" => "Admin Toko",
     ]);
   }
