@@ -7,7 +7,7 @@ use App\Models\Produk;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use CloudinaryLabs\CloudinaryLaravel\Facades\Cloudinary;
-
+use Inertia\Inertia;
 
 class ProdukController extends Controller
 {
@@ -31,7 +31,9 @@ class ProdukController extends Controller
    */
   public function create()
   {
-    //
+    return Inertia::render('TokoProduk/TokoProdukCreate', [
+      'title' => 'Tambah Produk',
+    ]);
   }
 
   /**
@@ -129,7 +131,9 @@ class ProdukController extends Controller
   public function edit(Produk $produk, Request $request)
   {
     $produk = Produk::find($request->id);
-    //
+    return Inertia::render('TokoProduk/TokoProdukEdit', [
+      'title' => 'Edit Produk'
+    ]);
   }
 
   /**

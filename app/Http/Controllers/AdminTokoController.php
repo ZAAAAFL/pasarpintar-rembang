@@ -15,13 +15,13 @@ class AdminTokoController extends Controller
   }
   public function list()
   {
-    return Inertia::render('TokoAdminList', [
-      "title" => "Admin Toko List",
+    return Inertia::render('TokoProduk', [
+      "title" => "Admin Toko Produk",
     ]);
   }
   public function kategori()
   {
-    return Inertia::render('TokoAdminKetegori', [
+    return Inertia::render('TokoAdminKategori', [
       "title" => "Admin Toko Kategori",
     ]);
   }
