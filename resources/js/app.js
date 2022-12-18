@@ -8,7 +8,7 @@ import { InertiaProgress } from '@inertiajs/progress';
 const appName = window.document.getElementsByTagName('title')[0]?.innerText || 'Pasar Pintar';
 
 createInertiaApp({
-  title: (title) => `${title} - ${appName}`,
+  title: (title) => `${title} | ${appName}`,
   resolve: (name) => require(`./Pages/${name}`),
   setup({ el, App, props }) {
     return render(<App {...props} />, el);

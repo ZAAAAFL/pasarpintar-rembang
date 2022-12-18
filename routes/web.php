@@ -6,10 +6,13 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\KurirController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\KeranjangController;
+use App\Http\Controllers\SearchController;
 use Inertia\Inertia;
 
 // home route
 Route::get('/', [HomeController::class, 'index'])->name('index');
+
+Route::get('/cari', [SearchController::class, 'search'])->name('pencarian');
 
 Route::middleware('auth',)->group(function () {
 
