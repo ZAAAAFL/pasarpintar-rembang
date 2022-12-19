@@ -7,7 +7,7 @@ const KurirTokoCreate = () => {
   return (
     <>
       <div className="flex">
-        <h1 className="font-bold text-3xl">Tambah Kategori</h1>
+        <h1 className="font-bold text-3xl">Tambah Kurir</h1>
         <Link href="/toko-kurir" className="bg-gray-600 hover:bg-gray-700 text-white p-2 rounded-md ml-5">Kembali</Link>
       </div>
 

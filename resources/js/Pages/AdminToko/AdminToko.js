@@ -1,6 +1,7 @@
 import React from "react";
 import Main from "@/Components/AdminTemplate/Main";
 import Input from "@/Components/Input";
+import { Link } from "@inertiajs/inertia-react";
 
 const AdminToko = () => {
   return (
@@ -12,12 +13,12 @@ const AdminToko = () => {
       <div className="overflow-x-auto relative shadow-md sm:rounded-lg">
         <div className="flex justify-between items-center pb-4">
           <div className="md:mt-3 md:ml-3">
-            <button className="inline-flex items-center text-white bg-blue-600 border border-gray-300 focus:outline-none hover:bg-blue-700 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm px-3 py-1.5 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700" type="button">
+            <Link href={'/admin-toko/create'} className="inline-flex items-center text-white bg-blue-600 border border-gray-300 focus:outline-none hover:bg-blue-700 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm px-3 py-1.5 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700" type="button">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-4 h-4 mr-2">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
               </svg>
               Tambah Toko
-            </button>
+            </Link>
           </div>
           <label htmlFor="table-search" className="sr-only">Search</label>
           <div className="relative md:mr-3 md:mt-3">

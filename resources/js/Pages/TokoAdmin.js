@@ -12,7 +12,7 @@ const TokoAdmin = () => {
         <div className="w-full bg-blue-600 text-white rounded-md">
           <div className="m-3 text-center">
             <div>Profit hari ini</div>
-            <div>10</div>
+            <div>Rp. 100.000</div>
           </div>
         </div>
         <div className="w-full bg-green-500 text-white rounded-md">
@@ -41,24 +41,24 @@ const TokoAdmin = () => {
             <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
               <tr>
                 <th scope="col" className="py-3 px-6">
-                  Toko
+                  Produk
                 </th>
               </tr>
             </thead>
             <tbody>
               <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
                 <th scope="row" className="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                  Software Store
+                  Laptop
                 </th>
               </tr>
               <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
                 <th scope="row" className="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                  Akrilik Advertising
+                  Komputer
                 </th>
               </tr>
               <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
                 <th scope="row" className="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                  <a href={'/admin-toko'} className="text-blue-700 font-bold">Selengkapnya..</a>
+                  <a href={'/toko-produk'} className="text-blue-700 font-bold">Selengkapnya..</a>
                 </th>
               </tr>
             </tbody>
@@ -69,7 +69,7 @@ const TokoAdmin = () => {
             <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
               <tr>
                 <th scope="col" className="py-3 px-6">
-                  Kategori Global
+                  Kategori
                 </th>
               </tr>
             </thead>
@@ -86,7 +86,7 @@ const TokoAdmin = () => {
               </tr>
               <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
                 <th scope="row" className="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                  <a href={'/admin-kategori'} className="text-blue-700 font-bold">Selengkapnya..</a>
+                  <a href={'/toko-kategori'} className="text-blue-700 font-bold">Selengkapnya..</a>
                 </th>
               </tr>
             </tbody>
