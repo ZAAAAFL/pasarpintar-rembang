@@ -5,8 +5,8 @@ import { ChevronDownIcon } from "@heroicons/react/20/solid"
 
 const TopNavBar = ({ user }) => {
   return (
-    <nav className="px-3.5 py-1 bg-white">
-      <div className="container text-sm">
+    <nav className="px-3.5 py-2 bg-white">
+      <div className="container text-md">
         <div className="flex justify-end items-center">
           {user !== null ? (
             <Menu as="div" className="relative inline-block">

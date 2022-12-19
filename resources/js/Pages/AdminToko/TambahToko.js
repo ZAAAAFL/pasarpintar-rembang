@@ -2,7 +2,7 @@ import React from "react";
 import Main from "@/Components/AdminTemplate/Main";
 import Input from "@/Components/Input";
 
-const AdminKategori = () => {
+const TambahToko = () => {
   return (
     <>
       <div>
@@ -17,6 +17,6 @@ const AdminKategori = () => {
   );
 };
 
-AdminKategori.layout = (page) => <Main children={page} />;
+TambahToko.layout = (page) => <Main children={page} />;
 
-export default AdminKategori;
+export default TambahToko;

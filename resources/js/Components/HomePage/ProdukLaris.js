@@ -2,7 +2,7 @@ import { Link } from "@inertiajs/inertia-react";
 import React from "react";
 
 const ProdukLaris = ({ produk }) => {
-  console.log(produk);
+  // console.log(produk);
   return (
     <div className="container">
       <div className="bg-sky-900 border-2 border-sky-900 rounded-lg overflow-hidden">
@@ -16,7 +16,7 @@ const ProdukLaris = ({ produk }) => {
             {produk.map((data, i) => {
               return (
                 <div key={i} className="snap-start snap-always shrink-0">
-                  <Link href="#">
+                  <Link href={`${data.toko.slugToko}/${data.slugProduk}`}>
                     <div className="relative flex flex-col overflow-visible w-full h-full max-w-[8rem] sm:w-max-[9rem] md:max-w-[10rem] lg:max-w-[11rem] max-h-max bg-white rounded-md">
                       <img
                         className="shrink-0 bg-cover bg-center w-full p-2 max-h-44"

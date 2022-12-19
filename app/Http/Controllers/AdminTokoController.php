@@ -15,13 +15,13 @@ class AdminTokoController extends Controller
   }
   public function pesanan()
   {
-    return Inertia::render('TokoAdminList', [
-      "title" => "Admin Toko List",
+    return Inertia::render('TokoProduk', [
+      "title" => "Admin Toko Produk",
     ]);
   }
   public function kategori()
   {
-    return Inertia::render('TokoAdminKetegori', [
+    return Inertia::render('TokoAdminKategori', [
       "title" => "Admin Toko Kategori",
     ]);
   }
@@ -29,6 +29,48 @@ class AdminTokoController extends Controller
   {
     return Inertia::render('TokoAdminSetting', [
       "title" => "Admin Toko Setting",
+    ]);
+  }
+
+  public function pesananBaru()
+  {
+    return Inertia::render('PesananToko/PesananBaru', [
+      'title' => 'Pesanan Baru',
+    ]);
+  }
+
+  public function konfirmasiBayar()
+  {
+    return Inertia::render('PesananToko/KonfirmasiBayar', [
+      'title' => 'Konfirmasi Bayar',
+    ]);
+  }
+
+  public function dikemas()
+  {
+    return Inertia::render('PesananToko/Dikemas', [
+      'title' => 'Dikemas',
+    ]);
+  }
+
+  public function dikirim()
+  {
+    return Inertia::render('PesananToko/Dikirim', [
+      'title' => 'Dikirim',
+    ]);
+  }
+
+  public function sampai()
+  {
+    return Inertia::render('PesananToko/Sampai', [
+      'title' => 'Sampai',
+    ]);
+  }
+
+  public function kurir()
+  {
+    return Inertia::render('KurirToko/KurirToko', [
+      'title' => 'Kurir',
     ]);
   }
 }

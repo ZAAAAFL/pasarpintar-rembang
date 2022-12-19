@@ -4,16 +4,15 @@ import Main from "@/Layouts/Main";
 import ProdukImage from "@/Components/Produk/ProdukImage";
 import ProdukDetail from "@/Components/Produk/ProdukDetail";
 
-const Produk = (props) => {
-  console.log(props);
+const Produk = ({produk, toko}) => {
   return (
     <>
-      <Head title={props.namaProduk} />
+      <Head title={produk.namaProduk} />
       <section className="overflow-hidden bg-white py-4 my-8">
         <div className="container">
           <div className="flex flex-wrap">
             <ProdukImage />
-            <ProdukDetail />
+            <ProdukDetail produk={produk} toko={toko} />
           </div>
         </div>
       </section>

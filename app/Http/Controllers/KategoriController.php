@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Kategori;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use Inertia\Inertia;
 
 class KategoriController extends Controller
 {
@@ -25,7 +26,9 @@ class KategoriController extends Controller
    */
   public function create()
   {
-    //
+    return Inertia::render('TokoAdminKategori/TokoAdminKategoriCreate', [
+      'title' => 'Tambah Kategori',
+    ]);
   }
 
   /**
@@ -66,7 +69,9 @@ class KategoriController extends Controller
    */
   public function edit(Kategori $kategori)
   {
-    //
+    return Inertia::render('TokoAdminKategori/TokoAdminKategoriEdit', [
+      'title' => 'Edit Kategori',
+    ]);
   }
 
   /**
