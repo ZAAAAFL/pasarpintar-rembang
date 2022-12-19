@@ -13,12 +13,14 @@ class AdminTokoController extends Controller
       "title" => "Admin Toko",
     ]);
   }
-  public function pesanan()
+
+  public function list()
   {
     return Inertia::render('TokoProduk', [
       "title" => "Admin Toko Produk",
     ]);
   }
+
   public function kategori()
   {
     return Inertia::render('TokoAdminKategori', [
