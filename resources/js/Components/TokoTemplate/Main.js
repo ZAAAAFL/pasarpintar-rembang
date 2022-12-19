@@ -18,8 +18,9 @@ const Main = (props) => {
   return (
     <div className="flex">
       <div
-        className={` ${open ? "w-72" : "w-20 "
-          } bg-gradient-to-t from-sky-700 via-blue-700 to-cyan-500 h-screen p-5  pt-8 relative duration-300`}
+        className={` ${
+          open ? "w-72" : "w-20 "
+        } bg-gradient-to-t from-sky-700 via-blue-700 to-cyan-500 h-screen p-5  pt-8 relative duration-300`}
       >
         <img
           src="/img/control.png"
@@ -30,12 +31,14 @@ const Main = (props) => {
         <div className="flex gap-x-4 items-center">
           <img
             src="/img/logo.png"
-            className={`cursor-pointer duration-500 ${open && "rotate-[360deg]"
-              }`}
+            className={`cursor-pointer duration-500 ${
+              open && "rotate-[360deg]"
+            }`}
           />
           <h1
-            className={`text-white origin-left font-bold text-xl duration-200 ${!open && "scale-0"
-              }`}
+            className={`text-white origin-left font-bold text-xl duration-200 ${
+              !open && "scale-0"
+            }`}
           >
             Toko ...
           </h1>
@@ -47,23 +50,23 @@ const Main = (props) => {
             >
               <ComputerDesktopIcon className="h-6 w-6 text-white" />
               <span
-                className={`${!open && "hidden"
-                  } origin-left text-white font-semibold duration-200`}
+                className={`${
+                  !open && "hidden"
+                } origin-left text-white font-semibold duration-200`}
               >
                 Dashboard
               </span>
             </li>
           </Link>
           <Link href="/toko-pesanan">
-<<<<<<< HEAD
-=======
             <li
               className={`flex  rounded-md p-2 cursor-pointer hover:bg-light-white text-gray-300 text-sm items-center gap-x-4`}
             >
               <ClipboardDocumentListIcon className="h-6 w-6 text-white" />
               <span
-                className={`${!open && "hidden"
-                  } origin-left text-white font-semibold duration-200`}
+                className={`${
+                  !open && "hidden"
+                } origin-left text-white font-semibold duration-200`}
               >
                 Pesanan
               </span>
@@ -76,22 +79,23 @@ const Main = (props) => {
               {/* <ArchiveBoxArrowDownIcon className="h-6 w-6 text-white" /> */}
               <UserCircleIcon className="h-6 w-6 text-white" />
               <span
-                className={`${!open && "hidden"
-                  } origin-left text-white font-semibold duration-200`}
+                className={`${
+                  !open && "hidden"
+                } origin-left text-white font-semibold duration-200`}
               >
                 Kurir
               </span>
             </li>
           </Link>
           <Link href="/toko-list">
->>>>>>> b8a32edca29e2fef5b9cc88262ddaa19eb9d1c6f
             <li
               className={`flex  rounded-md p-2 cursor-pointer hover:bg-light-white text-gray-300 text-sm items-center gap-x-4`}
             >
               <ArchiveBoxArrowDownIcon className="h-6 w-6 text-white" />
               <span
-                className={`${!open && "hidden"
-                  } origin-left text-white font-semibold duration-200`}
+                className={`${
+                  !open && "hidden"
+                } origin-left text-white font-semibold duration-200`}
               >
                 Produk
               </span>
@@ -103,8 +107,9 @@ const Main = (props) => {
             >
               <ListBulletIcon className="h-6 w-6 text-white" />
               <span
-                className={`${!open && "hidden"
-                  } origin-left text-white font-semibold duration-200`}
+                className={`${
+                  !open && "hidden"
+                } origin-left text-white font-semibold duration-200`}
               >
                 Kategori
               </span>
@@ -116,8 +121,9 @@ const Main = (props) => {
             >
               <Cog6ToothIcon className="h-6 w-6 text-white" />
               <span
-                className={`${!open && "hidden"
-                  } origin-left text-white font-semibold duration-200`}
+                className={`${
+                  !open && "hidden"
+                } origin-left text-white font-semibold duration-200`}
               >
                 Setting
               </span>
@@ -129,8 +135,9 @@ const Main = (props) => {
             >
               <ArrowLeftOnRectangleIcon className="h-6 w-6 text-white" />
               <span
-                className={`${!open && "hidden"
-                  } origin-left text-white font-semibold duration-200`}
+                className={`${
+                  !open && "hidden"
+                } origin-left text-white font-semibold duration-200`}
               >
                 Keluar
               </span>
