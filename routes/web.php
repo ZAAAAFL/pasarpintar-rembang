@@ -7,12 +7,6 @@ use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\KurirController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\KeranjangController;
-<<<<<<< HEAD
-=======
-use App\Http\Controllers\SearchController;
-
-
->>>>>>> 45385c5 (toko)
 use App\Http\Controllers\ProdukController;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\TokoController;
