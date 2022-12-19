@@ -58,9 +58,9 @@ Route::get('/admin-toko/create', function () {
 })->name('toko.create');
 
 Route::get('/toko-page', [AdminTokoController::class, 'index'])->name('toko.index');
-<<<<<<< HEAD
+
 Route::get('/toko-pesanan', [AdminTokoController::class, 'pesanan'])->name('toko.pesanan');
-=======
+
 
 //route toko produk/list produk
 Route::get('/toko-list', [AdminTokoController::class, 'list'])->name('toko.list');
@@ -68,7 +68,7 @@ Route::get('/toko-list/1/edit', [ProdukController::class, 'edit'])->name('produk
 Route::get('/toko-list/create', [ProdukController::class, 'create'])->name('produk.create');
 
 //route toko kategori
->>>>>>> b8a32edca29e2fef5b9cc88262ddaa19eb9d1c6f
+
 Route::get('/toko-kategori', [AdminTokoController::class, 'kategori'])->name('toko.kategori');
 Route::get('/toko-kategori/create', [KategoriController::class, 'create'])->name('kategori.create');
 Route::get('/toko-kategori/1/edit', [KategoriController::class, 'edit'])->name('kategoriToko.edit');
@@ -94,8 +94,7 @@ require __DIR__ . '/auth.php';
 Route::get('/{toko:slug}', [HomeController::class, 'toko'])->name('toko');
 
 // route produk toko
-<<<<<<< HEAD
+
 Route::get('/{toko:slug}/{produks:slug}', [HomeController::class, 'produk'])->name('toko.produk')->scopeBindings();
-=======
+
 Route::get('/{toko:slug}/{produk:slug}', [HomeController::class, 'produk'])->name('toko.produk')->scopeBindings();
->>>>>>> b8a32edca29e2fef5b9cc88262ddaa19eb9d1c6f
