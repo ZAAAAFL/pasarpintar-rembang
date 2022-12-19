@@ -54,7 +54,7 @@ const Main = (props) => {
               </span>
             </li>
           </Link>
-          <Link href="/toko-list">
+          <Link href="/toko-pesanan">
             <li
               className={`flex  rounded-md p-2 cursor-pointer hover:bg-light-white text-gray-300 text-sm items-center gap-x-4`}
             >
@@ -64,7 +64,7 @@ const Main = (props) => {
                   !open && "hidden"
                 } origin-left text-white font-semibold duration-200`}
               >
-                Toko
+                Produk
               </span>
             </li>
           </Link>

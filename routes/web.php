@@ -51,7 +51,7 @@ Route::get('/admin-toko/create', function () {
 })->name('toko.create');
 
 Route::get('/toko-page', [AdminTokoController::class, 'index'])->name('toko.index');
-Route::get('/toko-list', [AdminTokoController::class, 'list'])->name('toko.list');
+Route::get('/toko-pesanan', [AdminTokoController::class, 'pesanan'])->name('toko.pesanan');
 Route::get('/toko-kategori', [AdminTokoController::class, 'kategori'])->name('toko.kategori');
 Route::get('/toko-setting', [AdminTokoController::class, 'setting'])->name('toko.setting');
 
