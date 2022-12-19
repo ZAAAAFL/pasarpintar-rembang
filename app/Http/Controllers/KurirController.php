@@ -26,7 +26,9 @@ class KurirController extends Controller
    */
   public function create()
   {
-    //
+    return Inertia::render('KurirToko/KurirTokoCreate', [
+      'title' => 'Tambah Kurir',
+    ]);
   }
 
   /**
@@ -78,13 +80,12 @@ class KurirController extends Controller
    * @param  \App\Models\Kurir  $kurir
    * @return \Illuminate\Http\Response
    */
-  public function edit(User $kurir, $id)
+  public function edit()
   {
-    $auth = auth()->user()->id;
-    $kurir = User::find($id);
-    return Inertia::render('ProfilKurir', [
-      'title' => 'Profil',
-      'kurir' => $kurir,
+    // $auth = auth()->user()->id;
+    // $kurir = User::find($id);
+    return Inertia::render('KurirToko/KurirTokoEdit', [
+      'title' => 'Edit Kurir',
     ]);
     //
   }

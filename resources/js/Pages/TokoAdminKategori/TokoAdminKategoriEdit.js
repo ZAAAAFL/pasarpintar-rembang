@@ -1,17 +1,18 @@
 import React from "react";
 import Main from "@/Components/TokoTemplate/Main";
 import Input from "@/Components/Input";
+import { Link } from "@inertiajs/inertia-react";
 
 const TokoAdminKategoriEdit = () => {
   return (
     <>
       <div>
-        <h1 className="font-bold text-3xl">Toko Kategori</h1>
+        <h1 className="font-bold text-3xl">Edit Kategori</h1>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div className="overflow-x-auto relative shadow-md sm:rounded-lg mt-2">
-          <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+          <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400 bg-white">
             <thead className="text-xs text-center text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
               <tr>
                 <th scope="col" className="py-3 px-6">
@@ -42,7 +43,10 @@ const TokoAdminKategoriEdit = () => {
         <div>
           <label>Nama Kategori</label>
           <Input className="w-full" required={'required'} />
-          <button className="bg-blue-600 text-white hover:bg-blue-700 p-2 rounded-md mt-2">Update</button>
+          <div>
+            <Link href="/toko-kategori" className="bg-gray-600 hover:bg-gray-700 text-white p-2 rounded-md">Kembali</Link>
+            <button className="bg-blue-600 text-white hover:bg-blue-700 p-2 rounded-md mt-2 ml-4">Update</button>
+          </div>
         </div>
       </div>
 

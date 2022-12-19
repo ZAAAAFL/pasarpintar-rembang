@@ -31,4 +31,46 @@ class AdminTokoController extends Controller
       "title" => "Admin Toko Setting",
     ]);
   }
+
+  public function pesananBaru()
+  {
+    return Inertia::render('PesananToko/PesananBaru', [
+      'title' => 'Pesanan Baru',
+    ]);
+  }
+
+  public function konfirmasiBayar()
+  {
+    return Inertia::render('PesananToko/KonfirmasiBayar', [
+      'title' => 'Konfirmasi Bayar',
+    ]);
+  }
+
+  public function dikemas()
+  {
+    return Inertia::render('PesananToko/Dikemas', [
+      'title' => 'Dikemas',
+    ]);
+  }
+
+  public function dikirim()
+  {
+    return Inertia::render('PesananToko/Dikirim', [
+      'title' => 'Dikirim',
+    ]);
+  }
+
+  public function sampai()
+  {
+    return Inertia::render('PesananToko/Sampai', [
+      'title' => 'Sampai',
+    ]);
+  }
+
+  public function kurir()
+  {
+    return Inertia::render('KurirToko/KurirToko', [
+      'title' => 'Kurir',
+    ]);
+  }
 }

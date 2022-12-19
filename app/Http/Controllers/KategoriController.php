@@ -26,7 +26,9 @@ class KategoriController extends Controller
    */
   public function create()
   {
-    //
+    return Inertia::render('TokoAdminKategori/TokoAdminKategoriCreate', [
+      'title' => 'Tambah Kategori',
+    ]);
   }
 
   /**

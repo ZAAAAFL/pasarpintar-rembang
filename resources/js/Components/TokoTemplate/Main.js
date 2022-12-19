@@ -1,9 +1,13 @@
 import {
+  ArchiveBoxArrowDownIcon,
   ArrowLeftOnRectangleIcon,
   BuildingStorefrontIcon,
+  ClipboardDocumentCheckIcon,
+  ClipboardDocumentListIcon,
   Cog6ToothIcon,
   ComputerDesktopIcon,
   ListBulletIcon,
+  UserCircleIcon,
 } from "@heroicons/react/20/solid";
 import { Link } from "@inertiajs/inertia-react";
 import React from "react";
@@ -50,11 +54,38 @@ const Main = (props) => {
               </span>
             </li>
           </Link>
+          <Link href="/toko-pesanan">
+            <li
+              className={`flex  rounded-md p-2 cursor-pointer hover:bg-light-white text-gray-300 text-sm items-center gap-x-4`}
+            >
+              <ClipboardDocumentListIcon className="h-6 w-6 text-white" />
+              <span
+                className={`${!open && "hidden"
+                  } origin-left text-white font-semibold duration-200`}
+              >
+                Pesanan
+              </span>
+            </li>
+          </Link>
+          <Link href="/toko-kurir">
+            <li
+              className={`flex  rounded-md p-2 cursor-pointer hover:bg-light-white text-gray-300 text-sm items-center gap-x-4`}
+            >
+              {/* <ArchiveBoxArrowDownIcon className="h-6 w-6 text-white" /> */}
+              <UserCircleIcon className="h-6 w-6 text-white" />
+              <span
+                className={`${!open && "hidden"
+                  } origin-left text-white font-semibold duration-200`}
+              >
+                Kurir
+              </span>
+            </li>
+          </Link>
           <Link href="/toko-list">
             <li
               className={`flex  rounded-md p-2 cursor-pointer hover:bg-light-white text-gray-300 text-sm items-center gap-x-4`}
             >
-              <BuildingStorefrontIcon className="h-6 w-6 text-white" />
+              <ArchiveBoxArrowDownIcon className="h-6 w-6 text-white" />
               <span
                 className={`${!open && "hidden"
                   } origin-left text-white font-semibold duration-200`}

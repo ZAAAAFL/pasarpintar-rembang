@@ -4,11 +4,12 @@ import Main from "@/Components/TokoTemplate/Main";
 const TokoAdminKategori = () => {
   return (
     <>
-      <div>
+      <div className="flex">
         <h1 className="font-bold text-3xl">Toko Kategori</h1>
+        <a href="/toko-kategori/create" className="bg-blue-600 text-white hover:bg-blue-700 ml-5 p-2 rounded-md">Tambah Kategori</a>
       </div>
 
-      <div className="overflow-x-auto relative shadow-md sm:rounded-lg mt-2">
+      <div className="overflow-x-auto relative shadow-md sm:rounded-lg mt-3">
         <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
           <thead className="text-xs text-center text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
             <tr>

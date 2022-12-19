@@ -7,6 +7,12 @@ use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\KurirController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\KeranjangController;
+<<<<<<< HEAD
+=======
+use App\Http\Controllers\SearchController;
+
+
+>>>>>>> 45385c5 (toko)
 use App\Http\Controllers\ProdukController;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\TokoController;
@@ -44,8 +50,9 @@ Route::middleware('auth',)->group(function () {
     return Inertia::render('Kurir');
   })->name('kurir.index');
 
-  // route edit kurir
-  Route::get('/kurir/profile/{id}', [KurirController::class, 'edit'])->name('kurir.edit');
+  Route::get('/kurir/profile/{id}', function () {
+    return Inertia::render('ProfilKurir');
+  })->name('profilKurir');
 });
 
 Route::get('/admin-page', [AdminController::class, 'index'])->name('admin.index');
@@ -65,7 +72,19 @@ Route::get('/toko-list/create', [ProdukController::class, 'create'])->name('prod
 
 //route toko kategori
 Route::get('/toko-kategori', [AdminTokoController::class, 'kategori'])->name('toko.kategori');
+Route::get('/toko-kategori/create', [KategoriController::class, 'create'])->name('kategori.create');
 Route::get('/toko-kategori/1/edit', [KategoriController::class, 'edit'])->name('kategoriToko.edit');
+
+//route order toko
+Route::get('/toko-pesanan', [AdminTokoController::class, 'pesananBaru'])->name('pesananBaru');
+Route::get('/toko-pesanan/konfirmasi-bayar', [AdminTokoController::class, 'konfirmasiBayar'])->name('konfirmasiBayar');
+Route::get('/toko-pesanan/dikemas', [AdminTokoController::class, 'dikemas'])->name('dikemas');
+Route::get('/toko-pesanan/dikirim', [AdminTokoController::class, 'dikirim'])->name('dikirim');
+Route::get('/toko-pesanan/sampai', [AdminTokoController::class, 'sampai'])->name('sampai');
+
+Route::get('/toko-kurir', [AdminTokoController::class, 'kurir'])->name('kurir');
+Route::get('/toko-kurir/create', [KurirController::class, 'create'])->name('kurir.create');
+Route::get('/toko-kurir/1/edit', [KurirController::class, 'edit'])->name('kurir.edit');
 
 
 Route::get('/toko-setting', [AdminTokoController::class, 'setting'])->name('toko.setting');
